@@ -302,26 +302,44 @@ In this task, you will enable drill-down on the line chart so users can drill fr
 
 1. Select the line chart.
 
+      ![](../media/e2s39.png)
+
 2. At the top-right of the visual, locate the drill-mode icons:
 
-   - **Drill up** (upward arrow)
-   - **Drill down** (downward arrow)
-   - **Go to next level in the hierarchy** (two downward arrows)
-   - **Expand all down one level** (branching arrows)
+   - **Drill up (1)** (upward arrow)
+   - **Drill down (2)** (downward arrow)
+   - **Go to next level in the hierarchy (3)** (two downward arrows)
+   - **Expand all down one level (4)** (branching arrows)
+
+      ![](../media/e2s40.png)
+
 
 3. Turn on drill mode by selecting the **Drill down** arrow (it becomes highlighted).
 
+      ![](../media/e2s41.png)
+
 4. Click a data point on the line — for example the point for 2025 or Q2 2025. The chart drills into the next level of the date hierarchy.
+
+      ![](../media/e2s42.png)
 
 5. To drill back up, select the **Drill up** arrow.
 
+      ![](../media/e2s43.png)
+
 6. Turn off drill mode by selecting the **Drill down** arrow again.
+
+      ![](../media/e2s44.png)
+
 
 ### Cross-filtering between visuals
 
-1. Select the bar chart (Sales by Store).
+1. Select the bar chart (Sum of SalesAmount by StoreName).
+
+      ![](../media/e2s45.png)
 
 2. Click the bar for one store — for example `Contoso Downtown`.
+
+      ![](../media/e2s46.png)
 
 3. Observe the other visuals on the page:
 
@@ -330,19 +348,25 @@ In this task, you will enable drill-down on the line chart so users can drill fr
    - The map highlights that store's bubble.
    - The KPI cards recalculate for that store.
 
+      ![](../media/e2s47.png)
+
 4. Click the same bar again (or select the empty area next to the bars) to clear the filter.
 
 ### Configure edit interactions (optional but recommended)
 
 You can control which visuals a source visual cross-filters, cross-highlights, or leaves alone.
 
-1. Select the bar chart.
+1. Select the **bar (1)** chart.
 
-2. On the ribbon, select **Format** > **Edit interactions**.
+2. On the ribbon, select **Format (2)** > **Edit interactions (3)**.
+
+      ![](../media/e2s48.png)
 
 3. Small filter/highlight/none icons appear on top of every other visual on the page.
 
 4. Confirm each other visual is set to **Filter** (the funnel icon) so clicking a bar filters everything.
+
+      ![](../media/e2s49.png)
 
 5. Turn off **Edit interactions** by selecting the ribbon button again.
 
@@ -351,8 +375,10 @@ You can control which visuals a source visual cross-filters, cross-highlights, o
 1. Give each visual a clear title:
 
    - Select the visual.
-   - In the **Visualizations** pane, select **Format your visual**.
+   - In the **Visualizations** pane, select **Format your visual**. Navigate to General tab.
    - Expand **Title** and edit the **Text** field. Suggested titles: `Sales by Store`, `Sales Trend`, `Store × Category Sales`, `Store Locations`.
+
+      ![](../media/e2s50.png)
 
 2. Align the visuals so the layout looks like a grid.
 

@@ -28,36 +28,32 @@ In this exercise you will:
 
 In this task, you will sign in to the Power BI service in a browser and confirm Power BI Desktop is installed on the lab VM.
 
-1. On the lab VM, open **Microsoft Edge** (or another browser) and go to <https://app.powerbi.com>.
+1. On the lab VM, open **Power BI**.
 
-   ![](../media/s1.png)
+1. On the top right corner. Click on sign in.
+   
+   ![](../media/e1s2.png)
+
+1. Enter your **Email:** <inject key="AzureAdUserEmail"></inject>. Then click **Continue**.
+
+   ![](../media/e1s4.png)
 
 2. Sign in with the CloudLabs credentials:
 
    - Username: `<inject key="AzureAdUserEmail"></inject>`
    - Password: `<inject key="AzureAdUserPassword"></inject>`
 
-3. If you see a **Stay signed in?** prompt, choose **Yes** so you do not need to sign in repeatedly during the lab.
+   ![](../media/e1s3.png)
 
-4. Once the Power BI home page loads, note the left-side navigation. You should see items such as **Home**, **Browse**, **Create**, and **Workspaces**.
+   ![](../media/e1s5.png)
 
-   > [!Note]
-   > If a prompt asks you to start a trial or select a license, follow the on-screen instructions to activate the license attached to your CloudLabs account, then return to the home page.
+3. If you see a **Sign in to all apps?** prompt, choose **Yes** so you do not need to sign in repeatedly during the lab.
 
-5. Leave the Power BI service tab open in the background. Switch to the Windows desktop.
+   ![](../media/e1s6.png)
 
-6. From the Windows **Start** menu, type `Power BI Desktop` and select **Power BI Desktop** from the results.
+1. Click **Ok** when Power BI free license is assigned
 
-   Power BI Desktop is preinstalled on the lab VM.
-
-   > [!Note]
-   > If Power BI Desktop is not present, install it from the Microsoft Store: open **Microsoft Store**, search for **Power BI Desktop**, and select **Install**. The Store version updates automatically.
-
-7. When Power BI Desktop opens, close the welcome dialog if it appears. Select **Blank report** if that option is shown.
-
-8. At the top-right of Power BI Desktop, select **Sign in** and sign in with the same credentials from step 2.
-
-9. Confirm the main Power BI Desktop canvas is visible with the left-side view icons.
+   ![](../media/e1s7.png)
 
 ## Task 2: Tour the Power BI Desktop environment
 
@@ -65,17 +61,27 @@ In this task, you will identify the areas of Power BI Desktop you will use throu
 
 1. On the left side of the window, locate the three view icons:
 
-   - **Report view** — build report pages and visuals.
-   - **Table view** — inspect loaded table data and create measures.
-   - **Model view** — view and manage relationships between tables.
+   - **Report view (1)** — build report pages and visuals.
+   - **Table view (2)** — inspect loaded table data and create measures.
+   - **Model view (3)** — view and manage relationships between tables.
+
+   ![](../media/e1s8.png)
 
 2. Select **Report view**. This is where you will build the Store Performance report in Exercise 2.
 
+   ![](../media/e1s9.png)
+
 3. Select **Table view**. Data tables will appear here once you load them.
+
+   ![](../media/e1s10.png)
 
 4. Select **Model view**. Relationship diagrams will appear here once the tables are loaded.
 
+   ![](../media/e1s11.png)
+
 5. Return to **Report view**.
+
+   ![](../media/e1s8.png)
 
 6. On the right side of Power BI Desktop, identify these panes:
 
@@ -83,13 +89,17 @@ In this task, you will identify the areas of Power BI Desktop you will use throu
    - **Visualizations** — lets you pick chart types and configure fields.
    - **Filters** — lets you filter a visual, a page, or the whole report.
 
+   ![](../media/e1s12.png)
+
 7. On the **Home** ribbon, locate these buttons — you will use each of them in this lab:
 
-   - **Get data** — connect to sources.
-   - **Transform data** — open Power Query Editor.
-   - **Refresh** — rerun the queries against the source.
-   - **New measure** — create DAX measures (Exercise 3).
-   - **Publish** — send to the Power BI service.
+   - **Get data (1)** — connect to sources.
+   - **Transform data (2)** — open Power Query Editor.
+   - **Refresh (3)** — rerun the queries against the source.
+   - **New measure (4)** — create DAX measures (Exercise 3).
+   - **Publish (5)** — send to the Power BI service.
+
+   ![](../media/e1s13.png)
 
 ## Task 3: Locate the sample retail dataset
 
@@ -119,26 +129,14 @@ In this task, you will note the URLs for the Contoso Retail CSV files. You will 
    - `Sales.ProductID` refers to `Products.ProductID`.
    - `Sales.Date` refers to `Dates.Date`.
 
-   You will verify these relationships after loading the data in Task 5.
+   > **Note:** You will verify these relationships after loading the data in Task 5.
 
 4. Optional check — open one URL in your browser to confirm you can reach the file:
 
    - Paste the `Stores.csv` URL into a new browser tab.
    - The browser downloads or displays the CSV. If you see a **403** or **404** error, notify your instructor before continuing.
 
-5. On the lab VM desktop, open **File Explorer** and confirm the working folder exists:
-
-   ```text
-   C:\LabFiles\PowerBI-Retail
-   ```
-
-   and the empty Evidence folder:
-
-   ```text
-   C:\LabFiles\PowerBI-Retail\Evidence
-   ```
-
-   You will save your PBIX file, DAX text file, and report screenshot here in Exercise 3.
+   ![](../media/e1s14.png)
 
 ## Task 4: Connect to the CSVs and run a first refresh
 
@@ -148,13 +146,15 @@ In this task, you will use the **Web** connector in Power BI Desktop to connect 
 
 1. In Power BI Desktop, on the **Home** ribbon, select **Get data** > **Web**.
 
-2. In the **From Web** dialog, leave the mode on **Basic** and paste the `Sales.csv` URL:
+   ![](../media/e1s15.png)
+
+2. In the **From Web** dialog, leave the mode on **Basic (1)** and paste the `Sales.csv` (2) URL. Select **OK (3)**.
 
    ```
    https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Sales.csv
    ```
 
-3. Select **OK**.
+   ![](../media/e1s16.png)
 
 4. If Power BI prompts you to configure the credentials for the URL:
 
@@ -162,43 +162,54 @@ In this task, you will use the **Web** connector in Power BI Desktop to connect 
    - Leave **Select which level to apply these settings to** at the default.
    - Select **Connect**.
 
-   > [!Note]
-   > The CSVs are hosted with anonymous public read. Do not choose **Basic**, **Windows**, or **Organizational account** here — those will fail because the source has no such credentials configured.
+   ![](../media/e1s17.png)
+
+   > **Note:**  The CSVs are hosted with anonymous public read. Do not choose **Basic**, **Windows**, or **Organizational account** here — those will fail because the source has no such credentials configured.
 
 5. In the preview window, review the detected delimiter, column headers, and sample rows.
 
-6. Select **Transform Data** (not **Load**).
+6. Select **Transform Data** (not **Load**). Power Query Editor opens with a single query named `Sales`.
 
-   Power Query Editor opens with a single query named `Sales`.
+   ![](../media/e1s18.png)
 
 ### Add the remaining three CSVs
 
 1. In Power Query Editor, on the **Home** ribbon, select **New Source** > **Web**.
 
+   ![](../media/e1s19.png)
+
 2. Paste the `Stores.csv` URL, select **OK**, and if prompted keep **Anonymous** authentication.
 
+   ![](../media/e1s20.png)
+
 3. When the preview appears, select **OK** to add the query. Power Query names it `Stores`.
+
+   ![](../media/e1s21.png)
 
 4. Repeat for the remaining two files:
 
    - `Products.csv`
    - `Dates.csv`
 
+   ![](../media/e1s22.png)
+
 5. In the left **Queries** pane, confirm you now have four queries: `Sales`, `Stores`, `Products`, `Dates`.
+
+   ![](../media/e1s23.png)
 
 6. If any query name includes the file extension (for example `Sales.csv`), right-click the query name, select **Rename**, and rename it to the clean table name (`Sales`).
 
-   > [!Tip]
-   > Clean table names make DAX formulas and report fields easier to read later.
+   > **Note:** Clean table names make DAX formulas and report fields easier to read later.
 
 ### Run the first refresh
 
 1. On the **Home** ribbon in Power Query Editor, select **Refresh Preview** > **Refresh All**.
 
+   ![](../media/e1s24.png)
+
 2. Each query re-reads its CSV from Azure Blob Storage. You have now run your first refresh.
 
-   > [!Tip]
-   > **Refresh Preview** in Power Query only refreshes the sample used in the editor. The full refresh of the model runs when you choose **Close & Apply** or use **Refresh** in Power BI Desktop.
+   > **Note:** **Refresh Preview** in Power Query only refreshes the sample used in the editor. The full refresh of the model runs when you choose **Close & Apply** or use **Refresh** in Power BI Desktop.
 
 ## Task 5: Clean and shape the data in Power Query
 
@@ -208,7 +219,15 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
 1. In the left **Queries** pane, select `Sales`.
 
-2. Confirm the first row is used as column headers. If the headers appear as data values, select **Home** > **Use First Row as Headers**.
+   ![](../media/e1s25.png)
+
+2. Confirm the first row is used as column headers. 
+
+   ![](../media/e1s26.png)
+
+   > **Note:** If the headers appear as data values, select **Home** > **Use First Row as Headers**.
+
+   > ![](../media/e1s27.png)
 
 3. Confirm and correct data types by selecting the type icon to the left of each column name:
 
@@ -225,31 +244,46 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
    | `TransactionType` | Text |
    | `CustomerSegment` | Text |
 
+   > ![](../media/e1s28.png)
+
 4. Remove blank rows and any conversion errors:
 
    - Select **Home** > **Remove Rows** > **Remove Blank Rows**.
    - Select the `Date` column, then **Home** > **Remove Rows** > **Remove Errors**. (This drops the intentional bad row that has `not-a-date` as its date value.)
+
+   > ![](../media/e1s29.png)
 
       > **Note:** `Sales.csv` includes one intentional blank row and one intentional bad row so you can practice these Power Query cleanup steps. After removal you should have exactly 240 clean sales rows.
 
 5. Add a `SalesAmount` custom column that accounts for the discount:
 
    - Select **Add Column** > **Custom Column**.
+
+      ![](../media/e1s30.png)
+
    - **New column name**: `SalesAmount`.
    - **Custom column formula**:
 
      ```powerquery
      [Quantity] * [UnitPrice] * (1 - [DiscountPct])
      ```
-
    - Select **OK**.
+
+      ![](../media/e1s31.png)
+
    - Change the type of the new `SalesAmount` column to **Fixed Decimal Number**.
 
+      ![](../media/e1s32.png)
+
 6. Review the **Applied Steps** pane. You should see steps such as **Source**, **Promoted Headers**, **Changed Type**, **Removed Blank Rows**, **Removed Errors**, and **Added Custom**.
+
+      ![](../media/e1s34.png)
 
 ### Shape the Stores query
 
 1. Select `Stores` in the **Queries** pane.
+
+      ![](../media/e1s35.png)
 
 2. Confirm the first row is used as headers, then confirm data types:
 
@@ -271,9 +305,13 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
    - Select the `Region` column.
    - Select **Transform** > **Format** > **Capitalize Each Word**.
 
+      ![](../media/e1s36.png)
+
 ### Shape the Products query
 
 1. Select `Products` in the **Queries** pane.
+
+      ![](../media/e1s37.png)
 
 2. Confirm the first row is used as headers, then confirm data types:
 
@@ -290,9 +328,14 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
    - Select the `Category` column.
    - Select **Transform** > **Replace Values**.
+
+      ![](../media/e1s38.png)
+
    - **Value to find**: `Home and Kitchen`
    - **Replace with**: `Home & Kitchen`
    - Select **OK**.
+
+      ![](../media/e1s39.png)
 
 ### Shape the Dates query
 
