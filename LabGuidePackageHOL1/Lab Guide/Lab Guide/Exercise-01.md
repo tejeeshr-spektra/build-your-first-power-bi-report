@@ -341,6 +341,8 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
 1. Select `Dates` in the **Queries** pane.
 
+      ![](../media/e1s40.png)
+
 2. Confirm the first row is used as headers, then confirm data types:
 
    | Column | Data type |
@@ -358,9 +360,13 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
 1. On the **Home** ribbon, select **Close & Apply**.
 
+   ![](../media/e1s41.png)
+
 2. Wait for Power BI Desktop to load all four tables. You will see a progress dialog and then the report canvas.
 
 3. Select **Model view** on the left.
+
+   ![](../media/e1s42.png)
 
 4. Confirm relationships were auto-detected. You should see lines connecting:
 
@@ -370,24 +376,40 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
    | `Products[ProductID]` | `Sales[ProductID]` | One-to-many (1:*) |
    | `Dates[Date]` | `Sales[Date]` | One-to-many (1:*) |
 
-5. If any relationship is missing, create it manually:
+5. If any relationship is missing, create it manually. On the ribbon, select **Home** > **Manage relationships**.
 
-   - On the ribbon, select **Home** > **Manage relationships**.
-   - Select **New**.
-   - Choose the first table and column (for example `Stores` → `StoreID`).
-   - Choose the second table and column (for example `Sales` → `StoreID`).
+   ![](../media/e1s43.png)
+
+1. Select **New relationship**.
+
+   ![](../media/e1s44.png)
+
+1. Set:
+
+   - Choose the first table and column (for example `Dates` → `Date`).
+   - Choose the second table and column (for example `Sales` → `Date`).
    - Confirm **Cardinality** is **One to many (1:*)** or **Many to one (*:1)**.
    - Set **Cross filter direction** to **Single**.
    - Confirm **Make this relationship active** is selected.
-   - Select **OK**.
-   - Repeat for any other missing relationships.
-   - Select **Close**.
+   - Select **Save**.
+
+      ![](../media/e1s45.png)
+
+1 ENsure all three relationship is present. Repeat above steps for any other missing relationships. Select **Close**.
+
+   ![](../media/e1s46.png)
 
 6. Drag the `Sales` table to the center of the Model view canvas and place `Stores`, `Products`, and `Dates` around it — this is the classic star schema layout and makes the model easier to read.
 
-7. Select **Table view** and click each table briefly to confirm rows are loaded (you should see the sample data for each).
+      ![](../media/e1s47.png)
+
+7. Select **Table view** fron left navigation and click each table briefly to confirm rows are loaded (you should see the sample data for each).
+
+      ![](../media/e1s48.png)
 
 8. Return to **Report view**.
+
+      ![](../media/e1s49.png)
 
 ### Save your starter file
 
@@ -395,11 +417,7 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
 1. Select Browse this device.
 
-2. Save the file as:
-
-   ```text
-   C:\LabFiles\StorePerformanceReport.pbix
-   ```
+2. Navigate to `C:\LabFiles` path. The Add file name as StorePerformanceReport
 
    > [!Important]
    > Use this exact filename and folder. Later validations look for this file in the Evidence folder.

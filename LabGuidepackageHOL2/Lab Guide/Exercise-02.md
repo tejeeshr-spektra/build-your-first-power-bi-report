@@ -1,392 +1,356 @@
-# Exercise 02: Build your first report
+# Exercise 1: Publish and Share Your Work
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 60 Minutes
 
-## Scenario
+## 📘 Scenario
 
-Contoso Retail's leadership wants a single, clear report page that answers: which stores are performing best, how sales are trending over time, which product categories drive revenue, and how the view changes when you filter by date, region, or category. In this exercise, you will turn the model you built in Exercise 1 into an interactive **Store Performance** report.
+The **Item Sales Report** — a pre-built `.pbix` file provided in your lab environment — currently lives only in Power BI Desktop on your lab machine. Contoso Retail's leadership team wants this report available in the cloud — viewable from any device, summarized in a single executive dashboard, shared with the right people at the right permission level, and refreshed automatically every day.
 
-## Overview
+In this exercise, you will move your report to the Power BI Service and make it available to your audience: you will publish the report and its semantic model, build a dashboard from its key visuals, review the three primary sharing methods, and configure scheduled refresh.
 
-You will build one report page in Power BI Desktop using the model you loaded in Exercise 1. You will add core visuals (bar, line, card, table, map), KPI cards for the headline numbers, slicers and filters for interactivity, and configure drill-down and cross-filtering so viewers can explore the data.
+## 🎯 Objectives
 
-## Objectives
+In this exercise, you will complete the following tasks:
 
-- Task 1: Create core visuals — bar, line, card, table, and map
-- Task 2: Add KPI cards for total sales, top store, and units sold
-- Task 3: Add slicers and filters to slice-and-dice the data
-- Task 4: Use drill-down and cross-filtering between visuals
+- Task 1: Launch the environment and open your working report
+- Task 2: Power BI Service – Creating a Workspace
+- Task 3: Publish from Power BI Desktop to the Power BI Service
+- Task 4: Build a dashboard from report tiles
+- Task 5: Configure sharing (workspace roles, apps, links)
+- Task 6: Set up scheduled refresh
 
-## Task 1: Create core visuals
+## 🧩 Architecture Diagram
 
-In this task, you will build one report page with five core visuals: a bar chart, a line chart, a card, a table, and a map.
+   ![](./Images/arch-exercise-01.png)
 
-### Open the report and prepare the page
+## Task 1: Launch the environment and open your working report
 
-1. On the lab VM, open Power BI Desktop and open your saved report:
+In this task, you will open Power BI Desktop on the lab virtual machine and load the pre-built Item Sales Report provided for this lab. Verifying the report opens cleanly is an important checkpoint before publishing — any broken visuals or data errors will be carried into the Power BI Service.
 
-   ```text
-   C:\LabFiles\StorePerformanceReport.pbix
+1. On the lab VM, from the desktop or Start menu, open **Power BI Desktop**.
+
+   ![](./Images/images/exercise-1/L2E1T1S1.png)
+
+1. Click on the **Sign-in icon** located in the top-right corner.
+
+    ![](./Images/images/exercise-1/L2E1T1S2.png)
+
+1. Once the "Enter your email address" dialog appears, copy the **Username** and paste it into the **Email** field of the dialog and select **Continue**.
+
+   * **Email/Username**: <inject key="AzureAdUserEmail"></inject>
+
+     ![](./Images/images/exercise-1/L2E1T1S3.png) 
+
+1. After clicking Continue, you will be prompted to sign in again. Use the credentials provided below to sign in, and then click **Next (2)** to proceed.
+
+   * **Email/Username**: <inject key="AzureAdUserEmail"></inject> **(1)**
+
+     ![](./Images/images/exercise-1/L2E1T1S4.png)
+
+1. Enter the temporary access pass and click on **Sign in (2)**
+
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject> **(1)**
+
+     ![02](./Images/images/exercise-1/L2E1T1S5.png)
+
+1. For the pop-up **Automatically sign in to all desktop apps and websites on this device?** window, select **No,this app only**
+
+   ![02](./Images/images/exercise-1/L2E1T1S6.png)
+
+1. On the **Power BI free license assigned** window, click on **Ok**.
+
+   ![](./Images/images/exercise-1/L2E1T1S7.png)
+
+1. On the **Home** ribbon, click **open (1)** and click **Browse this device (2)**.
+
+   ![](./Images/images/exercise-1/L2E1T1S8.png)
+
+1. In the **Open** dialog, navigate to the path **C:\LabFiles (1)** and select the **Item Sales Report.pbix (2)** file, then click **Open (3)**.
+
+   ![](./Images/images/exercise-1/L2E1T1S9.png)
+
+   > **Note**: If the file is not found at this path, check the **Resources/Files** section of your lab environment for the provided **Item Sales Report.pbix**.
+
+1. Wait for the report to load completely.
+
+1. Review each report page and confirm that all visuals render correctly without error icons.
+
+   ![](./Images/images/exercise-1/L2E1T1S10.png)
+
+1. Click the **Save** icon from the top-left corner to save your workbook with all the changes you've made.
+
+   ![](./Images/images/exercise-1/L2E1T1S11.png)
+
+## Task 2: Power BI Service – Creating a Workspace
+
+In this task, you will create a workspace in the Power BI Service.
+
+1. In the left-hand navigation pane of the Power BI interface, select **Workspaces** to view and manage your available workspaces.
+   
+    ![](./Images/images/exercise-1/L2E1T2S1.png)
+
+1. Click on **+ New workspace** at the bottom of the Workspaces pane. This will open the **Create a workspace** dialog box.
+
+    ![](./Images/images/exercise-1/L2E1T2S2.png)
+
+1. On the **Create a workspace** page, provide the following details.
+
+    - In the **Name** field, enter **DIAD_<inject key="DeploymentID" enableCopy="false"/> (1)**.
+
+    - In the **Description** field, type **This is DIAD workspace (2)**.
+
+    - Click **Upload (3)** to upload an image that will serve as the workspace logo and help identify your workspace visually.
+
+      ![](./Images/images/exercise-1/L2E1T2S3.png)
+
+1. A file browser dialog box will open. Browse to the **DIAD** folder, then navigate to the **Data** folder at `C:\DIAD\DIADL4\Data`. Select the **VanArsdel\_WSLogo** **(1)** file and click **Open** **(2)**.
+
+      ![](./Images/images/exercise-1/L2E1T2S4.png)
+
+1. Click **Apply** to finalize and create the workspace with your configured settings.
+
+    ![](./Images/images/exercise-1/L2E1T2S5.png)
+
+    > 📌 **Note:** If prompted Introducing task flows, Click on **Got it** to proceed.
+
+    ![](./Images/images/exercise-1/NOTE.png)
+
+1. Once the **DIAD_<inject key="DeploymentID" enableCopy="false"/>** workspace is created, navigate to **Manage Access (1)** to configure user permissions and access levels.
+
+    ![](./Images/images/exercise-1/L2E1T2S6.png)
+
+1. On the **Manage Access** window, click on **+Add people or groups (1)** to add new users or service principals to your workspace.
+
+    ![](./Images/images/exercise-1/L2E1T2S9.png)
+
+1. On the **+Add people or groups** window, search for the service principal using `https://cloudlabs-v2.ai/` and select it from the search results.
+
+1. In the Add people pane, after selecting the service principle **(1)**, select the appropriate role from the drop down. Choose **Admin (2)** to grant administrative permissions, and then click **Add (3)** to confirm. Make sure that is listed on the **Manage access** window.
+
+     ![](./Images/images/exercise-1/L2E1T2S7.png)
+
+1. On the **Manage Access** page, you should see that your account and service principle is listed as an **Admin**.
+
+    ![](./Images/images/exercise-1/L2E1T2S8.png)
+
+## Task 3: Publish from Power BI Desktop to the Power BI Service
+
+In this task, you will publish your report — and the semantic model behind it — from Power BI Desktop into a workspace in the Power BI Service. Publishing is the moment your report stops being a local file and becomes a shared cloud asset.
+
+1. In Power BI Desktop, verify from the top-right corner of the window that you are signed in with your organizational account:
+
+   - **Account:** <inject key="AzureAdUserEmail"></inject>
+
+     ![](./Images/images/exercise-1/L2E1T3S1.png)
+
+1. From the **Home (1)** tab in the top ribbon, click on **Publish (2)** to publish your report to the Power BI Service.
+
+   ![](./Images/images/exercise-1/L2E1T3S2.png)
+
+1. If prompted to save your changes first, click **Save**.
+
+   ![](./Images/images/exercise-1/L2E1T3S3.png)
+
+1. In the **Publish to Power BI** dialog box, select the destination workspace **Workspace-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Select (2)**.
+
+   ![](./Images/images/exercise-1/L2E1T3S4.png)
+
+1. Wait for the publishing process to complete. A success message appears when it is done.
+
+   ![](./Images/images/exercise-1/L2E1T3S5.png)
+
+1. On the success message, click **Open 'Item Sales Report.pbix' in Power BI** to open the published report in the browser.
+
+   ![](./Images/images/exercise-1/L2E1T3S6.png)
+
+1. In the left navigation pane, select **Workspaces (1)** and open **Workspace-<inject key="DeploymentID" enableCopy="false"/> (2)**.
+
+   ![](./Images/images/exercise-1/L2E1T3S7.png)
+
+1. Verify that the workspace now contains **both** of the following items:
+
+   - The **Item Sales Report** (type: Report)
+   - The **Item Sales Report** semantic model (type: Semantic model)
+
+      ![](./Images/images/exercise-1/L2E1T3S8.png)
+
+   > **Note**: The semantic model is published automatically alongside the report. It holds the data, relationships, and measures, and is the object you will configure for scheduled refresh in Task 6.
+
+## Task 4: Build a dashboard from report tiles
+
+In this task, you will create a consolidated executive view by pinning key report visuals to a new dashboard. Unlike a report, a dashboard is a single-page canvas that can combine tiles from multiple reports — ideal for at-a-glance monitoring by leadership.
+
+1. In the Power BI Service, from the workspace, open the **Item Sales Report**.
+
+   ![](./Images/images/exercise-1/L2E1T4S1.png)
+
+1. Navigate to the first report page and identify a visual that represents a key business metric, such as the item-wise sales bar chart.
+
+1. Hover over the visual and select the **Pin visual** icon from the visual header.
+
+   ![](./Images/images/exercise-1/L2E1T4S2.png)
+
+1. In the **Pin to dashboard** window, select **New dashboard (1)** and enter the following name **(2)**, then click **Pin (3)**:
+
+   ```
+   Executive Dashboard
    ```
 
-2. Confirm the following tables appear in the **Data** pane on the right: `Sales`, `Stores`, `Products`, `Dates`.
+   ![](./Images/images/exercise-1/L2E1T4S3.png)
 
-   ![](../media/e2s1.png)
+1. When the **Pinned to dashboard** confirmation appears, close it and remain on the report.
 
-3. If the report has a blank page, use it. Otherwise select the **+** button at the bottom to add a new page.
+   ![](./Images/images/exercise-1/L2E1T4S3.png)
 
-4. Rename the page:
+1. Repeat the pinning process for additional visuals — this time, in the **Pin to dashboard** window, select **Existing dashboard (1)**, ensure **Executive Dashboard (2)** is selected, and click **Pin (3)**.
 
-   - Right-click the page tab.
-   - Select **Rename Page**.
-   - Type `Store Performance`.
-   - Press **Enter**. 
+   ![](./Images/images/exercise-1/L2E1T4S5.png)
 
-   ![](../media/e2s2.png)
+1. Pin **at least four visuals** in total, from this page or other report pages, so that together they provide a meaningful executive summary (for example: total revenue, top items by quantity, a trend over time, and a KPI or card visual).
 
-   ![](../media/e2s3.png)
+1. In the left navigation pane, select your workspace and open the **Executive Dashboard**.
 
-5. Set the page size to a standard 16:9 canvas:
+   ![](./Images/images/exercise-1/L2E1T4S6.png)
 
-   - With no visual selected, in the **Visualizations** pane, select **Format your page** (the paint-roller icon on the canvas card).
-   - Expand **Canvas settings**.
-   - Confirm **Type** is **16:9**.
+1. Rearrange and resize the tiles by dragging them, so the layout reads cleanly — place the single most important metric at the top-left, where the eye lands first.
 
-   ![](../media/e2s4.png)
+   ![](./Images/images/exercise-1/L2E1T4S7.png)
 
+## Task 5: Configure sharing (workspace roles, apps, links)
 
-### Bar chart — Sales by store
+In this task, you will review the three primary ways to share content in the Power BI Service — **workspace access** (roles for collaborators), **direct item sharing** (links and invitations for specific reports or dashboards), and **apps** (a packaged, read-only experience for broad audiences) — and understand when to use each.
 
-1. On the **Insert (1)** ribbon, select **Text box (2)**. Draw a text box across the top of the page and type **`Contoso Retail — Store Performance` (3)**. Format it as **Size: 36 (4)**, **bold (5)** and **Center (6)**. This is your report title.
+1. In the Power BI Service, return to **Workspace-<inject key="DeploymentID" enableCopy="false"/>** and review its contents.
 
-   ![](../media/e2s5.png)
+   ![](./Images/images/exercise-1/L2E1T5S1.png)
 
-2. Below the title, add the first visual:
+1. From the upper-right corner of the workspace, click **Manage access**.
 
-   - On the report canvas, click an empty area to deselect the title.
-   - In the **Visualizations** pane, select the **Stacked bar chart** icon.
+   ![](./Images/images/exercise-1/L2E1T5S2.png)
 
-      ![](../media/e2s6.png)
+1. In the **Manage access** pane, review the four available workspace roles:
 
-   - From the **Data** pane, expand **Stores (1)** table. drag `StoreName` (2) to the **Y-axis** well.
+   - **Admin** — full control, including managing workspace access and settings
+   - **Member** — can edit, publish, and share content
+   - **Contributor** — can create and edit content, but cannot manage access
+   - **Viewer** — can only view and interact with content.
 
-      ![](../media/e2s7.png)
+1. Click **+ Add people or groups (1)**, enter a test user or group provided in your lab instructions, set the permission to **Viewer (2)** using the dropdown, and click **Add (3)**.
 
-   - Expand **Sales (1)** table. Drag `SalesAmount` (2) to the **X-axis (3)** well.
+   ![](./Images/images/exercise-1/L2E1T5S4.png)
 
-      ![](../media/e2s8.png)
+   ![](./Images/images/exercise-1/L2E1T5S5.png)
 
-3. Sort the bar chart by sales, descending:
+1. Open the **Item Sales Report (1)** and, from the top menu, click **Share (2)**.
 
-   - Select the **More options (1)** (…) button on the visual.
-   - Choose **Sort by (2)** > **Sum of SalesAmount** > **Sort descending (3)**.
+   ![](./Images/images/exercise-1/L2E1T5S6.png)
 
-      ![](../media/e2s9.png)
+1. In the **Send link** dialog, review the available direct sharing options:
 
-4. Resize the bar chart to occupy the left half of the page below the title.
+   - **Sharing with specific people** — enter a name or email to send an invitation
+   - **Copy link** — generate a shareable link with configurable permissions
+   - **Link settings** — control whether recipients can share further or build content on the underlying data
 
-   ![](../media/e2s10.png)
+     ![](./Images/images/exercise-1/L2E1T5S7.png)
 
+1. Click the **link settings (gear/pencil) icon**, review the audience options — **People in your organization**, **People with existing access**, and **Specific people** — and the additional permissions checkboxes, then click **Apply**.
 
-### Line chart — Sales trend over time
+   ![](./Images/images/exercise-1/L2E1T5S8.png)
 
-1. Deselect the bar chart by clicking empty space, then add a new visual:
+1. Close the sharing dialog and return to the workspace.
 
-   - In the **Visualizations** pane, select **Line chart**.
+1. From the workspace toolbar, click **Create app**.
 
-      ![](../media/e2s11.png)
+   ![](./Images/images/exercise-1/L2E1T5S9.png)
 
-   - Expand Dates table. Drag `Date` to the **X-axis** well. Power BI creates a date hierarchy (Year → Quarter → Month → Day).
+1. On the **Setup** tab, review and configure the following:
 
-      ![](../media/e2s12.png)
+   - **App name (1)**: `Contoso Executive Insights`
+   - **Description (2)**: `Board-ready sales insights for the Contoso executive team.`
+   - Click **Next: Add content (3)**
 
-   - Drag `Sales[SalesAmount]` to the **Y-axis** well.
+     ![](./Images/images/exercise-1/L2E1T5S10.png)
 
-      ![](../media/e2s14.png)
+1. On the **Content** tab, click **+ Add content (1)**, select the **Item Sales Report** and the **Executive Dashboard (2)**, click **Add (3)**, and review the navigation order, then click **Next: Add audience (4)**.
 
-2. Resize the line chart to occupy the right half of the page next to the bar chart.
+   ![](./Images/images/exercise-1/L2E1T5S11.png)
 
-      ![](../media/e2s15.png)
+1. On the **Audience** tab, review how audiences control who sees which content, and review the audience access options.
 
-3. If the X-axis shows just `Year`, expand the hierarchy so the line has more points:
+   ![](./Images/images/exercise-1/L2E1T5S12.png)
 
-   - Select the line chart.
-   - In the top-right corner of the visual, select the **Expand all down one level** icon (a downward branching fork). Click it twice to expand to the Month level.
+1. If your environment allows app publishing, click **Publish app** and confirm.
 
-      ![](../media/e2s13.png)
+   ![](./Images/images/exercise-1/L2E1T5S13.png)
 
+## Task 6: Set up scheduled refresh
 
-### Table — Store × Category sales
+In this task, you will configure the published semantic model to refresh on a schedule so that the report and dashboard always reflect current data without any manual steps.
 
-1. Deselect the line chart, then add a new visual:
+1. In the workspace, locate the **Item Sales Report** semantic model.
 
-   - In the **Visualizations** pane, select **Table**.
-   - Drag `Stores[StoreName]` to the **Columns** well.
-   - Drag `Products[Category]` to the **Columns** well below `StoreName`.
-   - Drag `Sales[SalesAmount]` to the **Columns** well below `Category`.
+   ![](./Images/images/exercise-1/L2E1T6S1.png)
 
-      ![](../media/e2s16.png)
+1. Hover over the semantic model, click the **More options (…) (1)** menu, and select **Settings (2)**.
 
+   ![](./Images/images/exercise-1/L2E1T6S2.png)
 
-2. Position the table below the bar chart, in the lower-left of the page.
+1. On the settings page, review the available sections:
 
-### Map — Sales by store location
+   - **Gateway and cloud connections**
+   - **Data source credentials**
+   - **Refresh** (scheduled refresh)
+   - **Refresh history** (accessible from the Refresh section or the semantic model's Refresh menu)
 
-1. Deselect the table, then add a new visual:
+     ![](./Images/images/exercise-1/L2E1T6S3.png)
 
-   - In the **Visualizations** pane, select **Map** (the globe icon). If a prompt about **enabling maps** appears, select **OK**.
-   - Drag `Stores[Latitude]` to the **Latitude** well.
-   - Drag `Stores[Longitude]` to the **Longitude** well.
-   - Drag `Sales[SalesAmount]` to the **Bubble size** well.
-   - Drag `Stores[StoreName]` to the **Tooltips** well.
+1. Expand **Data source credentials** and verify whether authentication is required for the data source.
 
-      ![](../media/e2s17.png)
+1. If a credentials warning is displayed, click **Edit credentials (1)**, provide the appropriate **Authentication method (2)** for the lab data source, set the **Privacy level (3)** if prompted, and click **Sign in / Save (4)**.
 
-2. Position the map to the right of the table, in the lower-right of the page.
+   ![](./Images/L2E1T5S3.png)
 
-3. Save the report — select **File** > **Save** (or press **Ctrl+S**).
+   > **Note**: If your data source is an on-premises file, a data gateway is required for refresh. In this lab environment, review the **Gateway and cloud connections** section and note whether a gateway is configured.
 
-1. If map and filled map visuals as disabled. Select **File**.
+1. Expand the **Refresh** section.
 
-      ![](../media/e2s19.png)
+1. Toggle **Configure a refresh schedule** (Keep your data up to date) to **On (2)**.
 
-1. Then select Options and settings > Options.
+1. Configure the schedule as follows:
 
-      ![](../media/e2s20.png)
+   - **Refresh frequency (3)**: Daily
+   - **Time zone (1)**: Select your local time zone
+   - Click **Add another time (4)** and set a refresh time, such as **8:00 AM**
 
-1. Select Security under global. Then check map and filled map visual. Select save.
+     ![](./Images/images/exercise-1/L2E1T6S4.png)
 
-      ![](../media/e2s18.png)
+1. Enable the **Send refresh failure notifications** option so the dataset owner is notified when a refresh fails.
 
-!. Close the Power Bi Report and open again from path C:\LabFiles\StorePerformanceReport.pbix
+   ![](./Images/images/exercise-1/L2E1T6S5.png)
 
-      ![](../media/e2s21.png)
+1. Click **Apply** to save the configuration.
 
-## Task 2: Add KPI cards
+   ![](./Images/images/exercise-1/L2E1T6S6.png)
 
-In this task, you will add three KPI cards at the top of the page to surface the headline numbers: total sales, total units sold, and the top-performing store.
+1. Return to the workspace, hover over the semantic model, and click the **Refresh now (circular arrow)** icon to trigger an on-demand refresh and test your configuration.
 
-### Card 1 — Total sales
+   ![](./Images/images/exercise-1/L2E1T6S7.png)
 
-1. Click empty space on the canvas.
+1. click the **More options (…) (1)** menu and open the **Refresh history (2)** for the semantic model and verify that the refresh completed successfully.
 
-2. In the **Visualizations** pane, select **Card (1)** (the number icon).
+   ![](./Images/images/exercise-1/L2E1T6S8.png)
 
-3. Drag `Sales[SalesAmount]` (2) into the **Value (3)** well.
+## 📝 Summary
 
-      ![](../media/e2s22.png)
+In this exercise, you have accomplished the following:
 
-4. By default, Power BI shows a sum. Confirm the card label reads **Sum of SalesAmount**. Rename it for clarity:
+- Opened and reviewed the existing report in Power BI Desktop
+- created workspace in the powerbi service
+- Published the report and its semantic model to the Power BI Service
+- Created an Executive Dashboard by pinning key report visuals
+- Reviewed workspace roles, direct sharing, and app publishing
+- Configured and tested scheduled refresh for the semantic model
 
-   - Right-click the field in the **Value (1)** well and choose **Rename for this visual (2)**.
+### You have successfully completed the exercise. Click on **Next >>** to continue to the next exercise.
 
-      ![](../media/e2s23.png)
-
-   - Type `Total Sales` and press **Enter**.
-
-      ![](../media/e2s24.png)
-
-6. Position the card in the top-left, just below the title.
-
-      ![](../media/e2s26.png)
-
-
-### Card 2 — Total units
-
-1. Click empty space, insert another **Card (1)** visual.
-
-2. Drag `Sales[Quantity]` (2) into the **Value (3)** well.
-
-      ![](../media/e2s27.png)
-
-3. Click on **dropdown (1)**. Select **Rename for this visual (2)** and name as `Total Units` (3).
-
-      ![](../media/e2s28.png)
-
-4. Position this card next to the Total Sales card.
-
-      ![](../media/e2s29.png)
-
-### Card 3 — Top store
-
-The Top Store card needs the store name with the highest total sales. You will use the **TOPN** feature of a card by combining a text card with a value filter.
-
-1. Click empty space, insert another **Card** visual.
-
-2. Drag `Stores[StoreName]` into the **Categories** well.
-
-      ![](../media/e2s30.png)
-
-3. In the **Filters** pane on the right, expand the filter for `StoreName` under **Filters on this visual**.
-
-4. Change the **Filter type** to **Top N**.
-      - **Show items**: **Top 1**
-      - **By value**: select `Sales[SalesAmount]` into the **By value** area.
-
-      ![](../media/e2s33.png)
-
-6. Select **Apply filter**. The card now shows the single store name with the highest total sales.
-
-      ![](../media/e2s32.png)
-
-7. Rename the field in the visual to `Top Store`.
-
-      ![](../media/e2s31.png)
-
-8. Position this card next to the Total Units card. You should now have three KPI cards in a row across the top of the page.
-
-      ![](../media/e2s34.png)
-
-9. Save the report — **Ctrl+S**.
-
-## Task 3: Add slicers and filters
-
-In this task, you will add slicers so users can filter the page by region, category, and date range, and you will add a page-level filter to limit the report to a single year.
-
-### Slicer 1 — Region
-
-1. Click empty space on the canvas.
-
-2. In the **Visualizations** pane, select **List Slicer**.
-
-      ![](../media/e2s35.png)
-
-3. Drag `Stores[Region]` into the **Value** well.
-
-      ![](../media/e2s36.png)
-
-4. This gives a simple list of regions.
-
-5. Resize the slicer to a small strip along the top-right of the page.
-
-      ![](../media/e2s37.png)
-
-
-### Slicer 2 — Category
-
-1. Click empty space, insert another **Slicer** visual.
-
-2. Drag `Products[Category]` into the **Field** well.
-
-4. Position the category slicer next to the region slicer.
-
-      ![](../media/e2s38.png)
-
-### Slicer 3 — Date range
-
-1. Click empty space, insert another **Slicer** visual.
-
-2. Drag `Dates[Date]` into the **Value** well.
-
-3. Power BI recognizes the date field and defaults to a range slider. Confirm the slicer style is **Between**.
-
-4. Position the date slicer along the top of the page or in a sidebar area.
-
-### Page-level filter
-
-Suppose leadership only cares about 2025 sales.
-
-1. In the **Filters** pane, expand **Filters on this page**.
-
-2. Drag `Dates[Year]` into **Filters on this page**.
-
-3. Set the filter type to **Basic filtering** and select `2025`.
-
-4. Save the report — **Ctrl+S**.
-
-## Task 4: Use drill-down and cross-filtering
-
-In this task, you will enable drill-down on the line chart so users can drill from year to month, and you will confirm that clicking a bar in the bar chart cross-filters the other visuals.
-
-### Drill-down on the line chart
-
-1. Select the line chart.
-
-      ![](../media/e2s39.png)
-
-2. At the top-right of the visual, locate the drill-mode icons:
-
-   - **Drill up (1)** (upward arrow)
-   - **Drill down (2)** (downward arrow)
-   - **Go to next level in the hierarchy (3)** (two downward arrows)
-   - **Expand all down one level (4)** (branching arrows)
-
-      ![](../media/e2s40.png)
-
-
-3. Turn on drill mode by selecting the **Drill down** arrow (it becomes highlighted).
-
-      ![](../media/e2s41.png)
-
-4. Click a data point on the line — for example the point for 2025 or Q2 2025. The chart drills into the next level of the date hierarchy.
-
-      ![](../media/e2s42.png)
-
-5. To drill back up, select the **Drill up** arrow.
-
-      ![](../media/e2s43.png)
-
-6. Turn off drill mode by selecting the **Drill down** arrow again.
-
-      ![](../media/e2s44.png)
-
-
-### Cross-filtering between visuals
-
-1. Select the bar chart (Sum of SalesAmount by StoreName).
-
-      ![](../media/e2s45.png)
-
-2. Click the bar for one store — for example `Contoso Downtown`.
-
-      ![](../media/e2s46.png)
-
-3. Observe the other visuals on the page:
-
-   - The line chart now shows only that store's sales trend.
-   - The table filters to that store's rows.
-   - The map highlights that store's bubble.
-   - The KPI cards recalculate for that store.
-
-      ![](../media/e2s47.png)
-
-4. Click the same bar again (or select the empty area next to the bars) to clear the filter.
-
-### Configure edit interactions (optional but recommended)
-
-You can control which visuals a source visual cross-filters, cross-highlights, or leaves alone.
-
-1. Select the **bar (1)** chart.
-
-2. On the ribbon, select **Format (2)** > **Edit interactions (3)**.
-
-      ![](../media/e2s48.png)
-
-3. Small filter/highlight/none icons appear on top of every other visual on the page.
-
-4. Confirm each other visual is set to **Filter** (the funnel icon) so clicking a bar filters everything.
-
-      ![](../media/e2s49.png)
-
-5. Turn off **Edit interactions** by selecting the ribbon button again.
-
-### Polish the page
-
-1. Give each visual a clear title:
-
-   - Select the visual.
-   - In the **Visualizations** pane, select **Format your visual**. Navigate to General tab.
-   - Expand **Title** and edit the **Text** field. Suggested titles: `Sales by Store`, `Sales Trend`, `Store × Category Sales`, `Store Locations`.
-
-      ![](../media/e2s50.png)
-
-2. Align the visuals so the layout looks like a grid.
-
-   - Hold **Ctrl** and click several visuals.
-   - On the ribbon, select **Format** > **Align** > **Align left** (or similar) to snap them.
-
-3. Save the report — **Ctrl+S**.
-
-## Summary
-
-In this exercise you built the Store Performance report page with a bar chart, line chart, card KPIs, a category-by-store table, and a store map. You added a region slicer, a category slicer, and a date range slicer, plus a page-level filter for the year. You enabled drill-down on the line chart and confirmed that clicking one visual cross-filters the others. Your report is now interactive and saved. In Exercise 3 you will add DAX measures and finish preparing the evidence files.
+![](./Images/gs-next.png)

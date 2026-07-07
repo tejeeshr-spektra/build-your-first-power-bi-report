@@ -94,106 +94,103 @@ flowchart LR
     RPT --> EVID[Evidence folder outputs]
 ```
 
-### Component details
+## 🚀 Getting Started with the Lab
 
-| Component | Purpose |
-|---|---|
-| Windows Lab VM | Your isolated workstation for the lab. |
-| Power BI Desktop | The desktop authoring tool used to connect to data, transform data, model relationships, create visuals, and save the `.pbix` report. |
-| `C:\LabFiles\PowerBI-Retail` | The working folder containing all source CSV files. |
-| `Sales.csv` | Transaction-level or sales-grain data used as the main fact table. |
-| `Stores.csv` | Store lookup data, such as store name, region, and optional location fields. |
-| `Products.csv` | Product lookup data, such as product name and product category. |
-| `Dates.csv` | Date lookup data used for date filtering, trends, and drill-down. |
-| `Evidence` folder | The required output folder for the completed PBIX, DAX text file, and screenshot/export evidence. |
+Welcome to the **Publish, Share, and Enhance User Experience in Power BI** hands-on lab! We've prepared a seamless environment for you to explore and learn about publishing, sharing, and enhancing Power BI content. Let's begin by making the most of this experience.
 
-## Power BI Desktop workflow reference
+## 🖥️ Accessing Your Lab Environment
 
-Power BI Desktop includes three primary views that you will use throughout the lab:
+Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-- **Report view**: build and arrange report pages and visualizations.
-- **Table view**: inspect loaded data, create measures, and review table fields.
-- **Model view**: view and manage relationships between tables.
+![](../media/igs-01.png)
 
-Power BI Desktop also includes Power Query Editor. You open it from the **Home** tab by selecting **Transform data**. Power Query Editor is where you connect to sources, shape data, change data types, rename columns, remove rows, and apply other transformations before loading the data into the model.
+## 🧭 Exploring Your Lab Resources
 
-For local CSV files, the relevant workflow is:
+To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
 
-1. In Power BI Desktop, select **Home** > **Get data** > **Text/CSV**.
-2. Browse to a CSV file in `C:\LabFiles\PowerBI-Retail`.
-3. Select **Open**.
-4. In the preview or Navigator window, select **Transform Data** when you need to shape the data before loading.
-5. In Power Query Editor, apply the required transformations.
-6. Select **Close & Apply** to load the shaped query into Power BI Desktop.
-7. Save your work with **File** > **Save** or **File** > **Save As** when you are ready to create the PBIX evidence file.
+![](../media/igs-02.png)
 
-> [!Tip]
-> Power Query transformations do not edit the original CSV files. Power Query records transformation steps and applies those steps when data is loaded or refreshed.
+## 🛠️ Utilizing the Split Window Feature
 
-## Launch Power BI Desktop
+For convenience, you can open the lab guide in a separate window by selecting the **Split Window** button from the top right corner.
 
-Use one of the following methods to open Power BI Desktop on the Lab VM:
+![](../media/igs-03.png)
 
-1. Double-click the **Power BI Desktop** shortcut on the desktop, if present.
-2. Or, open the Windows **Start** menu, type `Power BI Desktop`, and select **Power BI Desktop** from the results.
-3. If Power BI Desktop displays a welcome screen, close it or select an option that starts a blank report.
-4. If prompted to sign in to Power BI, sign in only if your organization has provided Power BI service access. Otherwise, skip or close the prompt and continue in Power BI Desktop.
-5. Confirm you can see the main Power BI Desktop canvas with the left-side view icons for report, table, and model work.
+## ⚙️ Managing Your Virtual Machine
 
-![](./media/power-bi-desktop-start.png)
+Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
-## Evidence folder expectations
+![](../media/igs-04.png)
 
-Automated validations later in the lab look for specific evidence files. Save files exactly as described so the checks can find them.
+## 📖 Lab Guide Zoom In/Zoom Out
 
-| Evidence file | Required name or accepted format | Created in |
-|---|---|---|
-| Final PBIX report | `StorePerformanceReport.pbix` | Exercise 3 |
-| DAX measure definitions | `DAXMeasures.txt` | Exercise 3 |
-| Report image or export | `StorePerformanceReport.png`, `StorePerformanceReport.jpg`, or `StorePerformanceReport.pdf` | Exercise 3 |
+To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-Use this exact folder for all evidence files:
+![](../media/igs-05.png)
 
-```text
-C:\LabFiles\PowerBI-Retail\Evidence
-```
+## Resize the Virtual Machine View
 
-> [!Important]
-> Do not save the final PBIX or DAX text file only to Desktop, Downloads, or Documents. Copy or save the final versions into `C:\LabFiles\PowerBI-Retail\Evidence` before running validations.
+Use the **slider (three vertical dots)** located between the **Virtual Machine** and the **Lab Guide** panes to adjust the display size, allowing you to customize the layout based on your preference.
 
-## How the exercises fit together
+![slider](../media/gs-06.png)
 
-This lab is divided into three connected exercises. Each exercise builds on the work from the previous one.
+## 🔑 Let's Get Started with the Power BI Service
 
-### Exercise 1: Get started and prepare your retail data
+1. On the Lab VM, open **Microsoft Edge** from the desktop. In a new tab, navigate to **Microsoft Fabric** by copying and pasting the following URL into the address bar:
 
-You will open Power BI Desktop, connect to the four CSV files, use Power Query Editor to clean and shape the data, set appropriate data types, load the data, and create or verify relationships between tables.
+   ```
+   https://app.powerbi.com/
+   ```
+   
+1. On the **Sign in** page, enter the following email and click **Submit (2)**.
 
-Expected result: the Power BI model contains usable `Sales`, `Stores`, `Products`, and `Dates` tables with working relationships.
+   - **Email: (1)** <inject key="AzureAdUserEmail"></inject>
 
-### Exercise 2: Build your store performance report
+     ![](../media/gs-08.png)
 
-You will create a one-page store performance dashboard. The page will include KPI cards, charts, a table or matrix, slicers, cross-filtering behavior, and beginner-friendly formatting.
+1. On the **Enter password** screen, enter the following password and click **Sign in (2)**.
 
-Expected result: the report page helps compare store sales, unit sales, product categories, date trends, and regions.
+   - **Password: (1)** <inject key="AzureAdUserPassword"></inject>
 
-### Exercise 3: Add your first DAX measures and finalize
+     ![](../media/gs-09.png)
 
-You will create DAX measures such as `Total Sales`, `Total Units`, and `% of Total Sales`, use those measures in visuals, save the final PBIX file, export a report screenshot or PDF/image, and copy your DAX definitions into `DAXMeasures.txt`.
+1. When prompted with **Stay signed in?**, click **Yes**.
 
-Expected result: the evidence folder contains the completed PBIX, DAX measure text file, and report image or export used by validations.
+   ![](../media/gs-10.png)
 
-## Recommended working habits
+   > **Note**: If you receive a welcome tour pop-up, click **Cancel** or **Skip** to continue.
 
-- Save your PBIX file frequently while you work.
-- Keep the CSV source files in `C:\LabFiles\PowerBI-Retail`; moving them may break refresh paths.
-- Use clear table and measure names so your report is easy to review.
-- After major changes in Power Query Editor, select **Close & Apply** so the model receives the updates.
-- Before finishing the lab, open the Evidence folder and verify all required files are present and non-empty.
+1. From the Power BI home page, select **Account Manager (1)** from the top-right corner and click **Start trial (2)** to activate the Microsoft Fabric trial.
 
-## After publishing
+   ![](../media/gs-11.png)
 
-> [!Note] These steps run **after** you push the template to CloudLabs — they verify CloudLabs can actually serve this lab guide to candidates.
+   > **Note:** The trial is enabled to ensure that your account has access to Power BI Pro and Fabric features, including sharing and Copilot experiences used later in this lab.
 
-- **Verify docs-proxy access:** open Templates → your template → **Lab Guide Settings** in <https://admin.cloudlabs.ai> and confirm CloudLabs can reach this repo via the docs proxy. If the repo is private, configure GitHub access at the template level.
-- **Verify inline questions and inline validations:** sign in to <https://admin.cloudlabs.ai>, open your template, and walk through one full lab run to confirm every `<question>` and `<validation step="..."/>` renders correctly. Fix any that don't resolve.
+1. On the **Activate your 60-day fabric trial capacity** window, click **Activate**.
+
+   ![](../media/gs-12.png)
+
+1. On the **Successfully upgraded to Microsoft Fabric** window, click **OK** to continue.
+
+   ![](../media/gs-13.png)
+
+1. Click the **Account manager (1)** icon again and, under the **Profile** section, verify that the **Trial Status (2)** shows the number of days remaining.
+
+   ![](../media/gs-14.png)
+
+1. Keep this browser session signed in — you will return to the Power BI Service after publishing your report from Power BI Desktop.
+
+## Lab Support
+
+If you need any assistance at any point during the lab, please contact us at **cloudlabs-support@spektrasystems.com**. We are available 24/7 to help you out.
+
+Learner Support Contacts:
+
+- Email Support: cloudlabs-support@spektrasystems.com
+- Live Chat Support: https://cloudlabs.ai/labs-support
+
+Now, click on **Next** from the lower right corner to move on to the next page.
+
+![](../media/gs-next.png)
+
+### Happy Learning!!

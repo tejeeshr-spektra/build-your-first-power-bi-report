@@ -1,411 +1,356 @@
-# Exercise 01: Get started and prepare your data
+# Exercise 1: Publish and Share Your Work
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 60 Minutes
 
-## Scenario
+## 📘 Scenario
 
-You are a new business analyst at Contoso Retail. Your manager has pointed you at four CSV files hosted in Azure Blob Storage that hold the company's sales, store, product, and calendar data. In this exercise, you will get Power BI Desktop ready, connect to those CSVs over HTTPS, run your first refresh, and shape the data so it is ready for reporting.
+The **Item Sales Report** — a pre-built `.pbix` file provided in your lab environment — currently lives only in Power BI Desktop on your lab machine. Contoso Retail's leadership team wants this report available in the cloud — viewable from any device, summarized in a single executive dashboard, shared with the right people at the right permission level, and refreshed automatically every day.
 
-## Overview
+In this exercise, you will move your report to the Power BI Service and make it available to your audience: you will publish the report and its semantic model, build a dashboard from its key visuals, review the three primary sharing methods, and configure scheduled refresh.
 
-In this exercise you will:
+## 🎯 Objectives
 
-- Sign in to the Power BI service and confirm Power BI Desktop is installed on the lab VM.
-- Tour the Power BI Desktop workspace and identify the areas you will use later.
-- Locate the four Contoso Retail CSV URLs and understand what each file contains.
-- Connect Power BI Desktop to those CSVs using the **Web** connector and run the first data refresh.
-- Clean and shape the imported data in Power Query so the columns are named, typed, and ready to model.
+In this exercise, you will complete the following tasks:
 
-## Objectives
+- Task 1: Launch the environment and open your working report
+- Task 2: Power BI Service – Creating a Workspace
+- Task 3: Publish from Power BI Desktop to the Power BI Service
+- Task 4: Build a dashboard from report tiles
+- Task 5: Configure sharing (workspace roles, apps, links)
+- Task 6: Set up scheduled refresh
 
-- Task 1: Sign in to the Power BI service and confirm Power BI Desktop is installed
-- Task 2: Tour the Power BI Desktop environment
-- Task 3: Locate the sample retail dataset
-- Task 4: Connect to the CSVs and run a first refresh
-- Task 5: Clean and shape the data in Power Query
+## 🧩 Architecture Diagram
 
-## Task 1: Sign in to the Power BI service and confirm Power BI Desktop is installed
+   ![](./Images/arch-exercise-01.png)
 
-In this task, you will sign in to the Power BI service in a browser and confirm Power BI Desktop is installed on the lab VM.
+## Task 1: Launch the environment and open your working report
 
-1. On the lab VM, open **Power BI**.
+In this task, you will open Power BI Desktop on the lab virtual machine and load the pre-built Item Sales Report provided for this lab. Verifying the report opens cleanly is an important checkpoint before publishing — any broken visuals or data errors will be carried into the Power BI Service.
 
-1. On the top right corner. Click on sign in.
+1. On the lab VM, from the desktop or Start menu, open **Power BI Desktop**.
+
+   ![](./Images/images/exercise-1/L2E1T1S1.png)
+
+1. Click on the **Sign-in icon** located in the top-right corner.
+
+    ![](./Images/images/exercise-1/L2E1T1S2.png)
+
+1. Once the "Enter your email address" dialog appears, copy the **Username** and paste it into the **Email** field of the dialog and select **Continue**.
+
+   * **Email/Username**: <inject key="AzureAdUserEmail"></inject>
+
+     ![](./Images/images/exercise-1/L2E1T1S3.png) 
+
+1. After clicking Continue, you will be prompted to sign in again. Use the credentials provided below to sign in, and then click **Next (2)** to proceed.
+
+   * **Email/Username**: <inject key="AzureAdUserEmail"></inject> **(1)**
+
+     ![](./Images/images/exercise-1/L2E1T1S4.png)
+
+1. Enter the temporary access pass and click on **Sign in (2)**
+
+   - **Temporary Access Pass:** <inject key="AzureAdUserPassword"></inject> **(1)**
+
+     ![02](./Images/images/exercise-1/L2E1T1S5.png)
+
+1. For the pop-up **Automatically sign in to all desktop apps and websites on this device?** window, select **No,this app only**
+
+   ![02](./Images/images/exercise-1/L2E1T1S6.png)
+
+1. On the **Power BI free license assigned** window, click on **Ok**.
+
+   ![](./Images/images/exercise-1/L2E1T1S7.png)
+
+1. On the **Home** ribbon, click **open (1)** and click **Browse this device (2)**.
+
+   ![](./Images/images/exercise-1/L2E1T1S8.png)
+
+1. In the **Open** dialog, navigate to the path **C:\LabFiles (1)** and select the **Item Sales Report.pbix (2)** file, then click **Open (3)**.
+
+   ![](./Images/images/exercise-1/L2E1T1S9.png)
+
+   > **Note**: If the file is not found at this path, check the **Resources/Files** section of your lab environment for the provided **Item Sales Report.pbix**.
+
+1. Wait for the report to load completely.
+
+1. Review each report page and confirm that all visuals render correctly without error icons.
+
+   ![](./Images/images/exercise-1/L2E1T1S10.png)
+
+1. Click the **Save** icon from the top-left corner to save your workbook with all the changes you've made.
+
+   ![](./Images/images/exercise-1/L2E1T1S11.png)
+
+## Task 2: Power BI Service – Creating a Workspace
+
+In this task, you will create a workspace in the Power BI Service.
+
+1. In the left-hand navigation pane of the Power BI interface, select **Workspaces** to view and manage your available workspaces.
    
-   ![](../media/e1s2.png)
+    ![](./Images/images/exercise-1/L2E1T2S1.png)
 
-1. Enter your **Email:** <inject key="AzureAdUserEmail"></inject>. Then click **Continue**.
+1. Click on **+ New workspace** at the bottom of the Workspaces pane. This will open the **Create a workspace** dialog box.
 
-   ![](../media/e1s4.png)
+    ![](./Images/images/exercise-1/L2E1T2S2.png)
 
-2. Sign in with the CloudLabs credentials:
+1. On the **Create a workspace** page, provide the following details.
 
-   - Username: `<inject key="AzureAdUserEmail"></inject>`
-   - Password: `<inject key="AzureAdUserPassword"></inject>`
+    - In the **Name** field, enter **DIAD_<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
-   ![](../media/e1s3.png)
+    - In the **Description** field, type **This is DIAD workspace (2)**.
 
-   ![](../media/e1s5.png)
+    - Click **Upload (3)** to upload an image that will serve as the workspace logo and help identify your workspace visually.
 
-3. If you see a **Sign in to all apps?** prompt, choose **Yes** so you do not need to sign in repeatedly during the lab.
+      ![](./Images/images/exercise-1/L2E1T2S3.png)
 
-   ![](../media/e1s6.png)
+1. A file browser dialog box will open. Browse to the **DIAD** folder, then navigate to the **Data** folder at `C:\DIAD\DIADL4\Data`. Select the **VanArsdel\_WSLogo** **(1)** file and click **Open** **(2)**.
 
-1. Click **Ok** when Power BI free license is assigned
+      ![](./Images/images/exercise-1/L2E1T2S4.png)
 
-   ![](../media/e1s7.png)
+1. Click **Apply** to finalize and create the workspace with your configured settings.
 
-## Task 2: Tour the Power BI Desktop environment
+    ![](./Images/images/exercise-1/L2E1T2S5.png)
 
-In this task, you will identify the areas of Power BI Desktop you will use throughout the lab.
+    > 📌 **Note:** If prompted Introducing task flows, Click on **Got it** to proceed.
 
-1. On the left side of the window, locate the three view icons:
+    ![](./Images/images/exercise-1/NOTE.png)
 
-   - **Report view (1)** — build report pages and visuals.
-   - **Table view (2)** — inspect loaded table data and create measures.
-   - **Model view (3)** — view and manage relationships between tables.
+1. Once the **DIAD_<inject key="DeploymentID" enableCopy="false"/>** workspace is created, navigate to **Manage Access (1)** to configure user permissions and access levels.
 
-   ![](../media/e1s8.png)
+    ![](./Images/images/exercise-1/L2E1T2S6.png)
 
-2. Select **Report view**. This is where you will build the Store Performance report in Exercise 2.
+1. On the **Manage Access** window, click on **+Add people or groups (1)** to add new users or service principals to your workspace.
 
-   ![](../media/e1s9.png)
+    ![](./Images/images/exercise-1/L2E1T2S9.png)
 
-3. Select **Table view**. Data tables will appear here once you load them.
+1. On the **+Add people or groups** window, search for the service principal using `https://cloudlabs-v2.ai/` and select it from the search results.
 
-   ![](../media/e1s10.png)
+1. In the Add people pane, after selecting the service principle **(1)**, select the appropriate role from the drop down. Choose **Admin (2)** to grant administrative permissions, and then click **Add (3)** to confirm. Make sure that is listed on the **Manage access** window.
 
-4. Select **Model view**. Relationship diagrams will appear here once the tables are loaded.
+     ![](./Images/images/exercise-1/L2E1T2S7.png)
 
-   ![](../media/e1s11.png)
+1. On the **Manage Access** page, you should see that your account and service principle is listed as an **Admin**.
 
-5. Return to **Report view**.
+    ![](./Images/images/exercise-1/L2E1T2S8.png)
 
-   ![](../media/e1s8.png)
+## Task 3: Publish from Power BI Desktop to the Power BI Service
 
-6. On the right side of Power BI Desktop, identify these panes:
+In this task, you will publish your report — and the semantic model behind it — from Power BI Desktop into a workspace in the Power BI Service. Publishing is the moment your report stops being a local file and becomes a shared cloud asset.
 
-   - **Data** (or **Fields**) — lists loaded tables and columns.
-   - **Visualizations** — lets you pick chart types and configure fields.
-   - **Filters** — lets you filter a visual, a page, or the whole report.
+1. In Power BI Desktop, verify from the top-right corner of the window that you are signed in with your organizational account:
 
-   ![](../media/e1s12.png)
+   - **Account:** <inject key="AzureAdUserEmail"></inject>
 
-7. On the **Home** ribbon, locate these buttons — you will use each of them in this lab:
+     ![](./Images/images/exercise-1/L2E1T3S1.png)
 
-   - **Get data (1)** — connect to sources.
-   - **Transform data (2)** — open Power Query Editor.
-   - **Refresh (3)** — rerun the queries against the source.
-   - **New measure (4)** — create DAX measures (Exercise 3).
-   - **Publish (5)** — send to the Power BI service.
+1. From the **Home (1)** tab in the top ribbon, click on **Publish (2)** to publish your report to the Power BI Service.
 
-   ![](../media/e1s13.png)
+   ![](./Images/images/exercise-1/L2E1T3S2.png)
 
-## Task 3: Locate the sample retail dataset
+1. If prompted to save your changes first, click **Save**.
 
-In this task, you will note the URLs for the Contoso Retail CSV files. You will use these URLs in Task 4.
+   ![](./Images/images/exercise-1/L2E1T3S3.png)
 
-1. The four CSVs are hosted in an Azure Blob Storage container with anonymous read access. Use these exact URLs when the lab asks you to connect:
+1. In the **Publish to Power BI** dialog box, select the destination workspace **Workspace-<inject key="DeploymentID" enableCopy="false"/> (1)** and click **Select (2)**.
 
-   | File | URL |
-   |---|---|
-   | Stores | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Stores.csv` |
-   | Products | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Products.csv` |
-   | Dates | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Dates.csv` |
-   | Sales | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Sales.csv` |
+   ![](./Images/images/exercise-1/L2E1T3S4.png)
 
-2. Review what each CSV contains:
+1. Wait for the publishing process to complete. A success message appears when it is done.
 
-   | File | Role | Key columns |
-   |---|---|---|
-   | `Stores.csv` | Store dimension | `StoreID`, `StoreName`, `Region`, `City`, `State`, `Country`, `Latitude`, `Longitude`, `StoreType`, `OpenDate` |
-   | `Products.csv` | Product dimension | `ProductID`, `ProductName`, `Category`, `Subcategory`, `Brand`, `UnitPrice` |
-   | `Dates.csv` | Calendar dimension | `Date`, `Year`, `Quarter`, `MonthNumber`, `MonthName`, `MonthYear`, `Weekday`, `IsWeekend` |
-   | `Sales.csv` | Sales fact | `SalesID`, `Date`, `StoreID`, `ProductID`, `Quantity`, `UnitPrice`, `DiscountPct`, `Channel`, `TransactionType`, `CustomerSegment` |
+   ![](./Images/images/exercise-1/L2E1T3S5.png)
 
-3. Confirm the expected star-schema pattern:
+1. On the success message, click **Open 'Item Sales Report.pbix' in Power BI** to open the published report in the browser.
 
-   - `Sales.StoreID` refers to `Stores.StoreID`.
-   - `Sales.ProductID` refers to `Products.ProductID`.
-   - `Sales.Date` refers to `Dates.Date`.
+   ![](./Images/images/exercise-1/L2E1T3S6.png)
 
-   > **Note:** You will verify these relationships after loading the data in Task 5.
+1. In the left navigation pane, select **Workspaces (1)** and open **Workspace-<inject key="DeploymentID" enableCopy="false"/> (2)**.
 
-4. Optional check — open one URL in your browser to confirm you can reach the file:
+   ![](./Images/images/exercise-1/L2E1T3S7.png)
 
-   - Paste the `Stores.csv` URL into a new browser tab.
-   - The browser downloads or displays the CSV. If you see a **403** or **404** error, notify your instructor before continuing.
+1. Verify that the workspace now contains **both** of the following items:
 
-   ![](../media/e1s14.png)
+   - The **Item Sales Report** (type: Report)
+   - The **Item Sales Report** semantic model (type: Semantic model)
 
-## Task 4: Connect to the CSVs and run a first refresh
+      ![](./Images/images/exercise-1/L2E1T3S8.png)
 
-In this task, you will use the **Web** connector in Power BI Desktop to connect to the four Contoso Retail CSVs, import them, and run the first refresh.
+   > **Note**: The semantic model is published automatically alongside the report. It holds the data, relationships, and measures, and is the object you will configure for scheduled refresh in Task 6.
 
-### Connect to the first CSV
+## Task 4: Build a dashboard from report tiles
 
-1. In Power BI Desktop, on the **Home** ribbon, select **Get data** > **Web**.
+In this task, you will create a consolidated executive view by pinning key report visuals to a new dashboard. Unlike a report, a dashboard is a single-page canvas that can combine tiles from multiple reports — ideal for at-a-glance monitoring by leadership.
 
-   ![](../media/e1s15.png)
+1. In the Power BI Service, from the workspace, open the **Item Sales Report**.
 
-2. In the **From Web** dialog, leave the mode on **Basic (1)** and paste the `Sales.csv` (2) URL. Select **OK (3)**.
+   ![](./Images/images/exercise-1/L2E1T4S1.png)
+
+1. Navigate to the first report page and identify a visual that represents a key business metric, such as the item-wise sales bar chart.
+
+1. Hover over the visual and select the **Pin visual** icon from the visual header.
+
+   ![](./Images/images/exercise-1/L2E1T4S2.png)
+
+1. In the **Pin to dashboard** window, select **New dashboard (1)** and enter the following name **(2)**, then click **Pin (3)**:
 
    ```
-   https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Sales.csv
+   Executive Dashboard
    ```
 
-   ![](../media/e1s16.png)
+   ![](./Images/images/exercise-1/L2E1T4S3.png)
 
-4. If Power BI prompts you to configure the credentials for the URL:
+1. When the **Pinned to dashboard** confirmation appears, close it and remain on the report.
 
-   - On the left side of the credentials dialog, select **Anonymous**.
-   - Leave **Select which level to apply these settings to** at the default.
-   - Select **Connect**.
+   ![](./Images/images/exercise-1/L2E1T4S3.png)
 
-   ![](../media/e1s17.png)
+1. Repeat the pinning process for additional visuals — this time, in the **Pin to dashboard** window, select **Existing dashboard (1)**, ensure **Executive Dashboard (2)** is selected, and click **Pin (3)**.
 
-   > **Note:**  The CSVs are hosted with anonymous public read. Do not choose **Basic**, **Windows**, or **Organizational account** here — those will fail because the source has no such credentials configured.
+   ![](./Images/images/exercise-1/L2E1T4S5.png)
 
-5. In the preview window, review the detected delimiter, column headers, and sample rows.
+1. Pin **at least four visuals** in total, from this page or other report pages, so that together they provide a meaningful executive summary (for example: total revenue, top items by quantity, a trend over time, and a KPI or card visual).
 
-6. Select **Transform Data** (not **Load**). Power Query Editor opens with a single query named `Sales`.
+1. In the left navigation pane, select your workspace and open the **Executive Dashboard**.
 
-   ![](../media/e1s18.png)
+   ![](./Images/images/exercise-1/L2E1T4S6.png)
 
-### Add the remaining three CSVs
+1. Rearrange and resize the tiles by dragging them, so the layout reads cleanly — place the single most important metric at the top-left, where the eye lands first.
 
-1. In Power Query Editor, on the **Home** ribbon, select **New Source** > **Web**.
+   ![](./Images/images/exercise-1/L2E1T4S7.png)
 
-   ![](../media/e1s19.png)
+## Task 5: Configure sharing (workspace roles, apps, links)
 
-2. Paste the `Stores.csv` URL, select **OK**, and if prompted keep **Anonymous** authentication.
+In this task, you will review the three primary ways to share content in the Power BI Service — **workspace access** (roles for collaborators), **direct item sharing** (links and invitations for specific reports or dashboards), and **apps** (a packaged, read-only experience for broad audiences) — and understand when to use each.
 
-   ![](../media/e1s20.png)
+1. In the Power BI Service, return to **Workspace-<inject key="DeploymentID" enableCopy="false"/>** and review its contents.
 
-3. When the preview appears, select **OK** to add the query. Power Query names it `Stores`.
+   ![](./Images/images/exercise-1/L2E1T5S1.png)
 
-   ![](../media/e1s21.png)
+1. From the upper-right corner of the workspace, click **Manage access**.
 
-4. Repeat for the remaining two files:
+   ![](./Images/images/exercise-1/L2E1T5S2.png)
 
-   - `Products.csv`
-   - `Dates.csv`
+1. In the **Manage access** pane, review the four available workspace roles:
 
-   ![](../media/e1s22.png)
+   - **Admin** — full control, including managing workspace access and settings
+   - **Member** — can edit, publish, and share content
+   - **Contributor** — can create and edit content, but cannot manage access
+   - **Viewer** — can only view and interact with content.
 
-5. In the left **Queries** pane, confirm you now have four queries: `Sales`, `Stores`, `Products`, `Dates`.
+1. Click **+ Add people or groups (1)**, enter a test user or group provided in your lab instructions, set the permission to **Viewer (2)** using the dropdown, and click **Add (3)**.
 
-   ![](../media/e1s23.png)
+   ![](./Images/images/exercise-1/L2E1T5S4.png)
 
-6. If any query name includes the file extension (for example `Sales.csv`), right-click the query name, select **Rename**, and rename it to the clean table name (`Sales`).
+   ![](./Images/images/exercise-1/L2E1T5S5.png)
 
-   > **Note:** Clean table names make DAX formulas and report fields easier to read later.
+1. Open the **Item Sales Report (1)** and, from the top menu, click **Share (2)**.
 
-### Run the first refresh
+   ![](./Images/images/exercise-1/L2E1T5S6.png)
 
-1. On the **Home** ribbon in Power Query Editor, select **Refresh Preview** > **Refresh All**.
+1. In the **Send link** dialog, review the available direct sharing options:
 
-   ![](../media/e1s24.png)
+   - **Sharing with specific people** — enter a name or email to send an invitation
+   - **Copy link** — generate a shareable link with configurable permissions
+   - **Link settings** — control whether recipients can share further or build content on the underlying data
 
-2. Each query re-reads its CSV from Azure Blob Storage. You have now run your first refresh.
+     ![](./Images/images/exercise-1/L2E1T5S7.png)
 
-   > **Note:** **Refresh Preview** in Power Query only refreshes the sample used in the editor. The full refresh of the model runs when you choose **Close & Apply** or use **Refresh** in Power BI Desktop.
+1. Click the **link settings (gear/pencil) icon**, review the audience options — **People in your organization**, **People with existing access**, and **Specific people** — and the additional permissions checkboxes, then click **Apply**.
 
-## Task 5: Clean and shape the data in Power Query
+   ![](./Images/images/exercise-1/L2E1T5S8.png)
 
-In this task, you will apply beginner-friendly Power Query steps to prepare the data for reporting. Power Query records each step under **Applied Steps** so you can review or remove them later.
+1. Close the sharing dialog and return to the workspace.
 
-### Shape the Sales query
+1. From the workspace toolbar, click **Create app**.
 
-1. In the left **Queries** pane, select `Sales`.
+   ![](./Images/images/exercise-1/L2E1T5S9.png)
 
-   ![](../media/e1s25.png)
+1. On the **Setup** tab, review and configure the following:
 
-2. Confirm the first row is used as column headers. 
+   - **App name (1)**: `Contoso Executive Insights`
+   - **Description (2)**: `Board-ready sales insights for the Contoso executive team.`
+   - Click **Next: Add content (3)**
 
-   ![](../media/e1s26.png)
+     ![](./Images/images/exercise-1/L2E1T5S10.png)
 
-   > **Note:** If the headers appear as data values, select **Home** > **Use First Row as Headers**.
+1. On the **Content** tab, click **+ Add content (1)**, select the **Item Sales Report** and the **Executive Dashboard (2)**, click **Add (3)**, and review the navigation order, then click **Next: Add audience (4)**.
 
-   > ![](../media/e1s27.png)
+   ![](./Images/images/exercise-1/L2E1T5S11.png)
 
-3. Confirm and correct data types by selecting the type icon to the left of each column name:
+1. On the **Audience** tab, review how audiences control who sees which content, and review the audience access options.
 
-   | Column | Data type |
-   |---|---|
-   | `SalesID` | Text |
-   | `Date` | Date |
-   | `StoreID` | Text |
-   | `ProductID` | Text |
-   | `Quantity` | Whole Number |
-   | `UnitPrice` | Decimal Number |
-   | `DiscountPct` | Decimal Number |
-   | `Channel` | Text |
-   | `TransactionType` | Text |
-   | `CustomerSegment` | Text |
+   ![](./Images/images/exercise-1/L2E1T5S12.png)
 
-   > ![](../media/e1s28.png)
+1. If your environment allows app publishing, click **Publish app** and confirm.
 
-4. Remove blank rows and any conversion errors:
+   ![](./Images/images/exercise-1/L2E1T5S13.png)
 
-   - Select **Home** > **Remove Rows** > **Remove Blank Rows**.
-   - Select the `Date` column, then **Home** > **Remove Rows** > **Remove Errors**. (This drops the intentional bad row that has `not-a-date` as its date value.)
+## Task 6: Set up scheduled refresh
 
-   > ![](../media/e1s29.png)
+In this task, you will configure the published semantic model to refresh on a schedule so that the report and dashboard always reflect current data without any manual steps.
 
-      > **Note:** `Sales.csv` includes one intentional blank row and one intentional bad row so you can practice these Power Query cleanup steps. After removal you should have exactly 240 clean sales rows.
+1. In the workspace, locate the **Item Sales Report** semantic model.
 
-5. Add a `SalesAmount` custom column that accounts for the discount:
+   ![](./Images/images/exercise-1/L2E1T6S1.png)
 
-   - Select **Add Column** > **Custom Column**.
+1. Hover over the semantic model, click the **More options (…) (1)** menu, and select **Settings (2)**.
 
-      ![](../media/e1s30.png)
+   ![](./Images/images/exercise-1/L2E1T6S2.png)
 
-   - **New column name**: `SalesAmount`.
-   - **Custom column formula**:
+1. On the settings page, review the available sections:
 
-     ```powerquery
-     [Quantity] * [UnitPrice] * (1 - [DiscountPct])
-     ```
-   - Select **OK**.
+   - **Gateway and cloud connections**
+   - **Data source credentials**
+   - **Refresh** (scheduled refresh)
+   - **Refresh history** (accessible from the Refresh section or the semantic model's Refresh menu)
 
-      ![](../media/e1s31.png)
+     ![](./Images/images/exercise-1/L2E1T6S3.png)
 
-   - Change the type of the new `SalesAmount` column to **Fixed Decimal Number**.
+1. Expand **Data source credentials** and verify whether authentication is required for the data source.
 
-      ![](../media/e1s32.png)
+1. If a credentials warning is displayed, click **Edit credentials (1)**, provide the appropriate **Authentication method (2)** for the lab data source, set the **Privacy level (3)** if prompted, and click **Sign in / Save (4)**.
 
-6. Review the **Applied Steps** pane. You should see steps such as **Source**, **Promoted Headers**, **Changed Type**, **Removed Blank Rows**, **Removed Errors**, and **Added Custom**.
+   ![](./Images/L2E1T5S3.png)
 
-      ![](../media/e1s34.png)
+   > **Note**: If your data source is an on-premises file, a data gateway is required for refresh. In this lab environment, review the **Gateway and cloud connections** section and note whether a gateway is configured.
 
-### Shape the Stores query
+1. Expand the **Refresh** section.
 
-1. Select `Stores` in the **Queries** pane.
+1. Toggle **Configure a refresh schedule** (Keep your data up to date) to **On (2)**.
 
-      ![](../media/e1s35.png)
+1. Configure the schedule as follows:
 
-2. Confirm the first row is used as headers, then confirm data types:
+   - **Refresh frequency (3)**: Daily
+   - **Time zone (1)**: Select your local time zone
+   - Click **Add another time (4)** and set a refresh time, such as **8:00 AM**
 
-   | Column | Data type |
-   |---|---|
-   | `StoreID` | Text |
-   | `StoreName` | Text |
-   | `Region` | Text |
-   | `City` | Text |
-   | `State` | Text |
-   | `Country` | Text |
-   | `Latitude` | Decimal Number |
-   | `Longitude` | Decimal Number |
-   | `StoreType` | Text |
-   | `OpenDate` | Date |
+     ![](./Images/images/exercise-1/L2E1T6S4.png)
 
-3. The `Region` column contains inconsistent casing (for example, `North` and `north` for the same region). Standardize it:
+1. Enable the **Send refresh failure notifications** option so the dataset owner is notified when a refresh fails.
 
-   - Select the `Region` column.
-   - Select **Transform** > **Format** > **Capitalize Each Word**.
+   ![](./Images/images/exercise-1/L2E1T6S5.png)
 
-      ![](../media/e1s36.png)
+1. Click **Apply** to save the configuration.
 
-### Shape the Products query
+   ![](./Images/images/exercise-1/L2E1T6S6.png)
 
-1. Select `Products` in the **Queries** pane.
+1. Return to the workspace, hover over the semantic model, and click the **Refresh now (circular arrow)** icon to trigger an on-demand refresh and test your configuration.
 
-      ![](../media/e1s37.png)
+   ![](./Images/images/exercise-1/L2E1T6S7.png)
 
-2. Confirm the first row is used as headers, then confirm data types:
+1. click the **More options (…) (1)** menu and open the **Refresh history (2)** for the semantic model and verify that the refresh completed successfully.
 
-   | Column | Data type |
-   |---|---|
-   | `ProductID` | Text |
-   | `ProductName` | Text |
-   | `Category` | Text |
-   | `Subcategory` | Text |
-   | `Brand` | Text |
-   | `UnitPrice` | Fixed Decimal Number |
+   ![](./Images/images/exercise-1/L2E1T6S8.png)
 
-3. The `Category` column contains two spellings of the same category — `Home & Kitchen` and `Home and Kitchen`. Standardize them:
+## 📝 Summary
 
-   - Select the `Category` column.
-   - Select **Transform** > **Replace Values**.
+In this exercise, you have accomplished the following:
 
-      ![](../media/e1s38.png)
+- Opened and reviewed the existing report in Power BI Desktop
+- created workspace in the powerbi service
+- Published the report and its semantic model to the Power BI Service
+- Created an Executive Dashboard by pinning key report visuals
+- Reviewed workspace roles, direct sharing, and app publishing
+- Configured and tested scheduled refresh for the semantic model
 
-   - **Value to find**: `Home and Kitchen`
-   - **Replace with**: `Home & Kitchen`
-   - Select **OK**.
+### You have successfully completed the exercise. Click on **Next >>** to continue to the next exercise.
 
-      ![](../media/e1s39.png)
-
-### Shape the Dates query
-
-1. Select `Dates` in the **Queries** pane.
-
-2. Confirm the first row is used as headers, then confirm data types:
-
-   | Column | Data type |
-   |---|---|
-   | `Date` | Date |
-   | `Year` | Whole Number |
-   | `Quarter` | Text |
-   | `MonthNumber` | Whole Number |
-   | `MonthName` | Text |
-   | `MonthYear` | Text |
-   | `Weekday` | Text |
-   | `IsWeekend` | True/False |
-
-### Apply changes and verify relationships
-
-1. On the **Home** ribbon, select **Close & Apply**.
-
-2. Wait for Power BI Desktop to load all four tables. You will see a progress dialog and then the report canvas.
-
-3. Select **Model view** on the left.
-
-4. Confirm relationships were auto-detected. You should see lines connecting:
-
-   | From | To | Cardinality |
-   |---|---|---|
-   | `Stores[StoreID]` | `Sales[StoreID]` | One-to-many (1:*) |
-   | `Products[ProductID]` | `Sales[ProductID]` | One-to-many (1:*) |
-   | `Dates[Date]` | `Sales[Date]` | One-to-many (1:*) |
-
-5. If any relationship is missing, create it manually:
-
-   - On the ribbon, select **Home** > **Manage relationships**.
-   - Select **New**.
-   - Choose the first table and column (for example `Stores` → `StoreID`).
-   - Choose the second table and column (for example `Sales` → `StoreID`).
-   - Confirm **Cardinality** is **One to many (1:*)** or **Many to one (*:1)**.
-   - Set **Cross filter direction** to **Single**.
-   - Confirm **Make this relationship active** is selected.
-   - Select **OK**.
-   - Repeat for any other missing relationships.
-   - Select **Close**.
-
-6. Drag the `Sales` table to the center of the Model view canvas and place `Stores`, `Products`, and `Dates` around it — this is the classic star schema layout and makes the model easier to read.
-
-7. Select **Table view** and click each table briefly to confirm rows are loaded (you should see the sample data for each).
-
-8. Return to **Report view**.
-
-### Save your starter file
-
-1. Select **File** > **Save As**.
-
-1. Select Browse this device.
-
-2. Save the file as:
-
-   ```text
-   C:\LabFiles\StorePerformanceReport.pbix
-   ```
-
-   > [!Important]
-   > Use this exact filename and folder. Later validations look for this file in the Evidence folder.
-
-3. Keep Power BI Desktop open — you will build the report visuals in Exercise 2.
-
-## Summary
-
-In this exercise you signed in to the Power BI service, toured Power BI Desktop, connected to the four Contoso Retail CSV files hosted in Azure Blob Storage, ran your first refresh, and shaped the data in Power Query. Your model has clean, typed data and working relationships, and your starter `StorePerformanceReport.pbix` is saved in the Evidence folder — ready for report building in Exercise 2.
+![](./Images/gs-next.png)
