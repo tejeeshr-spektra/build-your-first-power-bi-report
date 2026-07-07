@@ -26,10 +26,12 @@ In this task, you will build one report page with five core visuals: a bar chart
 1. On the lab VM, open Power BI Desktop and open your saved report:
 
    ```text
-   C:\LabFiles\PowerBI-Retail\Evidence\StorePerformanceReport.pbix
+   C:\LabFiles\StorePerformanceReport.pbix
    ```
 
 2. Confirm the following tables appear in the **Data** pane on the right: `Sales`, `Stores`, `Products`, `Dates`.
+
+   ![](../media/e2s1.png)
 
 3. If the report has a blank page, use it. Otherwise select the **+** button at the bottom to add a new page.
 
@@ -38,7 +40,11 @@ In this task, you will build one report page with five core visuals: a bar chart
    - Right-click the page tab.
    - Select **Rename Page**.
    - Type `Store Performance`.
-   - Press **Enter**.
+   - Press **Enter**. 
+
+   ![](../media/e2s2.png)
+
+   ![](../media/e2s3.png)
 
 5. Set the page size to a standard 16:9 canvas:
 
@@ -46,38 +52,69 @@ In this task, you will build one report page with five core visuals: a bar chart
    - Expand **Canvas settings**.
    - Confirm **Type** is **16:9**.
 
+   ![](../media/e2s4.png)
+
+
 ### Bar chart — Sales by store
 
-1. On the **Insert** ribbon, select **Text box**. Draw a text box across the top of the page and type `Contoso Retail — Store Performance`. Format it larger and bold. This is your report title.
+1. On the **Insert (1)** ribbon, select **Text box (2)**. Draw a text box across the top of the page and type **`Contoso Retail — Store Performance` (3)**. Format it as **Size: 36 (4)**, **bold (5)** and **Center (6)**. This is your report title.
+
+   ![](../media/e2s5.png)
 
 2. Below the title, add the first visual:
 
    - On the report canvas, click an empty area to deselect the title.
    - In the **Visualizations** pane, select the **Stacked bar chart** icon.
-   - From the **Data** pane, drag `Stores[StoreName]` to the **Y-axis** well.
-   - Drag `Sales[SalesAmount]` to the **X-axis** well.
+
+      ![](../media/e2s6.png)
+
+   - From the **Data** pane, expand **Stores (1)** table. drag `StoreName` (2) to the **Y-axis** well.
+
+      ![](../media/e2s7.png)
+
+   - Expand **Sales (1)** table. Drag `SalesAmount` (2) to the **X-axis (3)** well.
+
+      ![](../media/e2s8.png)
 
 3. Sort the bar chart by sales, descending:
 
-   - Select the **More options** (…) button on the visual.
-   - Choose **Sort axis** > **SalesAmount**, then **Sort axis** > **Sort descending**.
+   - Select the **More options (1)** (…) button on the visual.
+   - Choose **Sort by (2)** > **Sum of SalesAmount** > **Sort descending (3)**.
+
+      ![](../media/e2s9.png)
 
 4. Resize the bar chart to occupy the left half of the page below the title.
+
+   ![](../media/e2s10.png)
+
 
 ### Line chart — Sales trend over time
 
 1. Deselect the bar chart by clicking empty space, then add a new visual:
 
    - In the **Visualizations** pane, select **Line chart**.
-   - Drag `Dates[Date]` to the **X-axis** well. Power BI creates a date hierarchy (Year → Quarter → Month → Day).
+
+      ![](../media/e2s11.png)
+
+   - Expand Dates table. Drag `Date` to the **X-axis** well. Power BI creates a date hierarchy (Year → Quarter → Month → Day).
+
+      ![](../media/e2s12.png)
+
    - Drag `Sales[SalesAmount]` to the **Y-axis** well.
 
+      ![](../media/e2s14.png)
+
 2. Resize the line chart to occupy the right half of the page next to the bar chart.
+
+      ![](../media/e2s15.png)
 
 3. If the X-axis shows just `Year`, expand the hierarchy so the line has more points:
 
    - Select the line chart.
    - In the top-right corner of the visual, select the **Expand all down one level** icon (a downward branching fork). Click it twice to expand to the Month level.
+
+      ![](../media/e2s13.png)
+
 
 ### Table — Store × Category sales
 
@@ -87,6 +124,9 @@ In this task, you will build one report page with five core visuals: a bar chart
    - Drag `Stores[StoreName]` to the **Columns** well.
    - Drag `Products[Category]` to the **Columns** well below `StoreName`.
    - Drag `Sales[SalesAmount]` to the **Columns** well below `Category`.
+
+      ![](../media/e2s16.png)
+
 
 2. Position the table below the bar chart, in the lower-left of the page.
 
@@ -100,9 +140,27 @@ In this task, you will build one report page with five core visuals: a bar chart
    - Drag `Sales[SalesAmount]` to the **Bubble size** well.
    - Drag `Stores[StoreName]` to the **Tooltips** well.
 
+      ![](../media/e2s17.png)
+
 2. Position the map to the right of the table, in the lower-right of the page.
 
 3. Save the report — select **File** > **Save** (or press **Ctrl+S**).
+
+1. If map and filled map visuals as disabled. Select **File**.
+
+      ![](../media/e2s19.png)
+
+1. Then select Options and settings > Options.
+
+      ![](../media/e2s20.png)
+
+1. Select Security under global. Then check map and filled map visual. Select save.
+
+      ![](../media/e2s18.png)
+
+!. Close the Power Bi Report and open again from path C:\LabFiles\StorePerformanceReport.pbix
+
+      ![](../media/e2s21.png)
 
 ## Task 2: Add KPI cards
 
@@ -112,31 +170,42 @@ In this task, you will add three KPI cards at the top of the page to surface the
 
 1. Click empty space on the canvas.
 
-2. In the **Visualizations** pane, select **Card** (the single-number icon).
+2. In the **Visualizations** pane, select **Card (1)** (the number icon).
 
-3. Drag `Sales[SalesAmount]` into the **Fields** well.
+3. Drag `Sales[SalesAmount]` (2) into the **Value (3)** well.
+
+      ![](../media/e2s22.png)
 
 4. By default, Power BI shows a sum. Confirm the card label reads **Sum of SalesAmount**. Rename it for clarity:
 
-   - Right-click the field in the **Fields** well and choose **Rename for this visual**.
+   - Right-click the field in the **Value (1)** well and choose **Rename for this visual (2)**.
+
+      ![](../media/e2s23.png)
+
    - Type `Total Sales` and press **Enter**.
 
-5. Format the value:
-
-   - With the card selected, in the **Visualizations** pane select **Format your visual**.
-   - Expand **Callout value** and set **Display units** to **Auto**.
+      ![](../media/e2s24.png)
 
 6. Position the card in the top-left, just below the title.
 
+      ![](../media/e2s26.png)
+
+
 ### Card 2 — Total units
 
-1. Click empty space, insert another **Card** visual.
+1. Click empty space, insert another **Card (1)** visual.
 
-2. Drag `Sales[Quantity]` into the **Fields** well.
+2. Drag `Sales[Quantity]` (2) into the **Value (3)** well.
 
-3. Rename the field in the visual to `Total Units`.
+      ![](../media/e2s27.png)
+
+3. Click on **dropdown (1)**. Select **Rename for this visual (2)** and name as `Total Units` (3).
+
+      ![](../media/e2s28.png)
 
 4. Position this card next to the Total Sales card.
+
+      ![](../media/e2s29.png)
 
 ### Card 3 — Top store
 
@@ -144,24 +213,29 @@ The Top Store card needs the store name with the highest total sales. You will u
 
 1. Click empty space, insert another **Card** visual.
 
-2. Drag `Stores[StoreName]` into the **Fields** well.
+2. Drag `Stores[StoreName]` into the **Categories** well.
+
+      ![](../media/e2s30.png)
 
 3. In the **Filters** pane on the right, expand the filter for `StoreName` under **Filters on this visual**.
 
 4. Change the **Filter type** to **Top N**.
+      - **Show items**: **Top 1**
+      - **By value**: select `Sales[SalesAmount]` into the **By value** area.
 
-5. Set:
+      ![](../media/e2s33.png)
 
-   - **Show items**: **Top 1**
-   - **By value**: drag `Sales[SalesAmount]` into the **By value** area.
+6. Select **Apply filter**. The card now shows the single store name with the highest total sales.
 
-6. Select **Apply filter**.
-
-   The card now shows the single store name with the highest total sales.
+      ![](../media/e2s32.png)
 
 7. Rename the field in the visual to `Top Store`.
 
+      ![](../media/e2s31.png)
+
 8. Position this card next to the Total Units card. You should now have three KPI cards in a row across the top of the page.
+
+      ![](../media/e2s34.png)
 
 9. Save the report — **Ctrl+S**.
 
@@ -173,13 +247,20 @@ In this task, you will add slicers so users can filter the page by region, categ
 
 1. Click empty space on the canvas.
 
-2. In the **Visualizations** pane, select **Slicer**.
+2. In the **Visualizations** pane, select **List Slicer**.
 
-3. Drag `Stores[Region]` into the **Field** well.
+      ![](../media/e2s35.png)
 
-4. In the top-right of the slicer, select the drop-down and choose **List**. This gives a simple check-box list of regions.
+3. Drag `Stores[Region]` into the **Value** well.
+
+      ![](../media/e2s36.png)
+
+4. This gives a simple list of regions.
 
 5. Resize the slicer to a small strip along the top-right of the page.
+
+      ![](../media/e2s37.png)
+
 
 ### Slicer 2 — Category
 
@@ -187,19 +268,15 @@ In this task, you will add slicers so users can filter the page by region, categ
 
 2. Drag `Products[Category]` into the **Field** well.
 
-3. Set the display style to **Dropdown** so it takes less space:
-
-   - Select the slicer.
-   - In the **Visualizations** pane, select **Format your visual**.
-   - Expand **Slicer settings** > **Style** and choose **Dropdown**.
-
 4. Position the category slicer next to the region slicer.
+
+      ![](../media/e2s38.png)
 
 ### Slicer 3 — Date range
 
 1. Click empty space, insert another **Slicer** visual.
 
-2. Drag `Dates[Date]` into the **Field** well.
+2. Drag `Dates[Date]` into the **Value** well.
 
 3. Power BI recognizes the date field and defaults to a range slider. Confirm the slicer style is **Between**.
 

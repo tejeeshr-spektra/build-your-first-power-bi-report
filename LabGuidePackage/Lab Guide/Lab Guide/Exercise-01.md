@@ -30,6 +30,8 @@ In this task, you will sign in to the Power BI service in a browser and confirm 
 
 1. On the lab VM, open **Microsoft Edge** (or another browser) and go to <https://app.powerbi.com>.
 
+   ![](../media/s1.png)
+
 2. Sign in with the CloudLabs credentials:
 
    - Username: `<inject key="AzureAdUserEmail"></inject>`
@@ -101,9 +103,6 @@ In this task, you will note the URLs for the Contoso Retail CSV files. You will 
    | Products | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Products.csv` |
    | Dates | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Dates.csv` |
    | Sales | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Sales.csv` |
-
-   > [!Important]
-   > Write these URLs down or keep this page open — you will paste them into Power BI Desktop in Task 4.
 
 2. Review what each CSV contains:
 
@@ -220,8 +219,8 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
    | `StoreID` | Text |
    | `ProductID` | Text |
    | `Quantity` | Whole Number |
-   | `UnitPrice` | Fixed Decimal Number |
-   | `DiscountPct` | Fixed Decimal Number |
+   | `UnitPrice` | Decimal Number |
+   | `DiscountPct` | Decimal Number |
    | `Channel` | Text |
    | `TransactionType` | Text |
    | `CustomerSegment` | Text |
@@ -231,8 +230,7 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
    - Select **Home** > **Remove Rows** > **Remove Blank Rows**.
    - Select the `Date` column, then **Home** > **Remove Rows** > **Remove Errors**. (This drops the intentional bad row that has `not-a-date` as its date value.)
 
-   > [!Note]
-   > `Sales.csv` includes one intentional blank row and one intentional bad row so you can practice these Power Query cleanup steps. After removal you should have exactly 240 clean sales rows.
+      > **Note:** `Sales.csv` includes one intentional blank row and one intentional bad row so you can practice these Power Query cleanup steps. After removal you should have exactly 240 clean sales rows.
 
 5. Add a `SalesAmount` custom column that accounts for the discount:
 
@@ -272,9 +270,6 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
    - Select the `Region` column.
    - Select **Transform** > **Format** > **Capitalize Each Word**.
-
-   > [!Tip]
-   > Standardizing values in Power Query means slicers and legends will show one clean value per region instead of duplicates.
 
 ### Shape the Products query
 
@@ -355,10 +350,12 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
 1. Select **File** > **Save As**.
 
+1. Select Browse this device.
+
 2. Save the file as:
 
    ```text
-   C:\LabFiles\PowerBI-Retail\Evidence\StorePerformanceReport.pbix
+   C:\LabFiles\StorePerformanceReport.pbix
    ```
 
    > [!Important]

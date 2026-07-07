@@ -29,7 +29,7 @@ In this task, you will create a proper DAX measure for total sales. Until now yo
 1. On the lab VM, open Power BI Desktop and open the report:
 
    ```text
-   C:\LabFiles\PowerBI-Retail\Evidence\StorePerformanceReport.pbix
+   C:\LabFiles\StorePerformanceReport.pbix
    ```
 
 2. In the **Data** pane on the right, right-click the `Sales` table name and select **New measure**.
