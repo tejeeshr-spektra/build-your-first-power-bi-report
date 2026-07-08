@@ -2,99 +2,54 @@
 
 ### Overall Estimated Duration: 4 Hours
 
-## Scenario
-
-You are a new business analyst for a fictional retail chain. Your manager has provided four CSV files that describe sales transactions, store details, product information, and dates. In this lab, you will use Power BI Desktop on a Windows Lab VM to load the CSV files, shape the data, create a simple model, build a one-page store performance dashboard, and write your first beginner DAX measures.
-
-The finished report will help answer common retail questions, such as which stores sell the most, how sales trend over time, which product categories perform best, and how slicers or drill-down interactions change the view of the data.
-
-## Lab VM and sign-in context
-
-This lab runs on a dedicated Windows Lab VM that is provisioned for you. The deployment creates the VM, installs or verifies Power BI Desktop, and places the required local lab assets in a known folder before you begin.
-
-1. If your CloudLabs environment provides a **Launch VM** or **Connect** button, use it to open the Windows Lab VM session.
-2. If you need to sign in to the Azure portal during the lab, browse to <https://portal.azure.com> and use the following credentials:
-   - Username: `<inject key="AzureAdUserEmail"></inject>`
-   - Password: `<inject key="AzureAdUserPassword"></inject>`
-3. Your Azure subscription for this lab is `<inject key="SubscriptionID"></inject>` and your tenant is `<inject key="TenantID"></inject>`.
-4. Your lab deployment identifier is part of the resource name **PowerBI-Retail-<inject key="DeploymentID" enableCopy="false"/>**. You may see this identifier in CloudLabs or Azure resource names if you inspect the deployment.
-
-> [!Important]
-> The Power BI work in this lab is completed locally in Power BI Desktop. You do not need to publish to the Power BI service, create Azure data services, or use Power BI administrator permissions.
-
-## Lab overview
-
-You will work with the following local folder on the Windows Lab VM:
-
-```text
-C:\LabFiles\PowerBI-Retail
-```
-
-The folder contains the retail source data files:
-
-```text
-C:\LabFiles\PowerBI-Retail\Sales.csv
-C:\LabFiles\PowerBI-Retail\Stores.csv
-C:\LabFiles\PowerBI-Retail\Products.csv
-C:\LabFiles\PowerBI-Retail\Dates.csv
-```
-
-It also contains an evidence folder used for saved report files and validation outputs:
-
-```text
-C:\LabFiles\PowerBI-Retail\Evidence
-```
-
-By the end of the lab, you should have these learner-created files in the evidence folder:
-
-```text
-C:\LabFiles\PowerBI-Retail\Evidence\StorePerformanceReport.pbix
-C:\LabFiles\PowerBI-Retail\Evidence\DAXMeasures.txt
-C:\LabFiles\PowerBI-Retail\Evidence\StorePerformanceReport.png
-```
-
-A PDF or JPG export is also acceptable for the final report evidence if your environment uses one of those formats:
-
-```text
-C:\LabFiles\PowerBI-Retail\Evidence\StorePerformanceReport.pdf
-C:\LabFiles\PowerBI-Retail\Evidence\StorePerformanceReport.jpg
-```
-
+## Overview
+ 
+You are a new business analyst for **Contoso Retail**, a fictional retail chain with stores across the United States. Contoso's leadership wants a single-page report that answers everyday retail questions: which stores sell the most, how sales trend over time, which product categories perform best, and how slicers or drill-down change the view.
+ 
+In this lab you will use **Power BI Desktop** on a Windows Lab VM to connect to four CSV files hosted in Azure Blob Storage — `Sales`, `Stores`, `Products`, and `Dates`. You will shape the data in Power Query, model the relationships, build an interactive **Store Performance** report, and add your first DAX measures. You will also sign in to the Power BI service so you can publish the report and continue with follow-on lab work.
+ 
 ## Objectives
-
-After completing this lab, you will be able to:
-
-- Launch Power BI Desktop on a prepared Windows Lab VM.
-- Connect Power BI Desktop to local CSV files by using **Get data** > **Text/CSV**.
+ 
+After completing this lab you will be able to:
+ 
+- Sign in to the Power BI service and confirm Power BI Desktop is installed on a prepared Windows Lab VM.
+- Connect Power BI Desktop to CSV files hosted in Azure Blob Storage using the **Web** connector with anonymous authentication.
 - Use Power Query Editor to review, clean, rename, type, and shape source columns.
-- Load shaped queries into the Power BI Desktop model.
-- Create or verify relationships between a sales fact table and store, product, and date tables.
-- Build a single-page store performance report with cards, charts, slicers, filters, and basic interactions.
-- Create simple DAX measures such as `Total Sales`, `Total Units`, and `% of Total Sales`.
-- Save the PBIX file, DAX measure definitions, and report screenshot or export in the required evidence folder.
-
+- Load shaped queries into the Power BI Desktop semantic model and verify relationships between tables.
+- Build a single-page Store Performance report with KPI cards, charts, a table, a map, slicers, filters, drill-down, and cross-filtering.
+- Create beginner DAX measures such as `Total Sales` and `% of Total Sales`.
+- Save the PBIX file, DAX definitions, and report screenshot or export in the required Evidence folder on the Lab VM.
 ## Prerequisites
-
-You should be comfortable with basic Windows tasks such as opening File Explorer, launching desktop applications, browsing folders, and saving files. No previous Power BI experience is required.
-
-Optional Power BI service sign-in may be available if your organization provides it, but the core lab does not require publishing. If Power BI Desktop asks you to sign in and you do not have a Power BI service account for this lab, close or skip the prompt when the UI allows it and continue working in Power BI Desktop.
-
+ 
+- Familiarity with basic Windows tasks — File Explorer, launching desktop applications, saving files.
+- An Azure Active Directory account with a Power BI license (provided by CloudLabs and injected on the sign-in steps later on this page).
+- No prior Power BI, DAX, or Power Query experience required — the lab builds up from a blank Power BI Desktop canvas.
 ## Architecture
-
-The lab uses a simple local-file architecture. Azure provides the disposable Windows Lab VM. Power BI Desktop and the CSV source files are prepared on the VM, and all learner-created evidence is saved locally.
-
+ 
+The lab builds a small Power BI solution end-to-end. You start with four CSV source tables, shape them in Power Query, build a semantic model with relationships (a classic star schema), add DAX measures, design an interactive report, and publish to the Power BI service.
+ 
 ```mermaid
 flowchart LR
-    CL[CloudLabs environment] --> AZ[Azure lab deployment]
-    AZ --> VM[Windows Lab VM]
-    VM --> PBI[Power BI Desktop]
-    VM --> LF[C:\LabFiles\PowerBI-Retail]
-    LF --> CSV[Sales, Stores, Products, Dates CSV files]
-    CSV --> PQ[Power Query shaping]
-    PQ --> MODEL[Power BI model relationships]
-    MODEL --> RPT[Store performance report]
-    RPT --> EVID[Evidence folder outputs]
+    SRC["Sales, Stores, Products, Dates<br/>(CSV source tables)"] --> PQ["Power Query Editor<br/>connect · clean · type · shape"]
+    PQ --> MODEL["Semantic model<br/>Sales fact + Stores, Products, Dates dimensions"]
+    MODEL --> DAX["DAX measures<br/>Total Sales · % of Total Sales"]
+    MODEL --> RPT["Store Performance report<br/>KPI cards · charts · slicers · drill-down"]
+    DAX --> RPT
+    RPT --> SVC["Power BI Service<br/>publish and share"]
 ```
+ 
+### Component details
+ 
+| Component | Purpose |
+|---|---|
+| Source tables (`Sales`, `Stores`, `Products`, `Dates`) | The retail scenario dataset. `Sales` is the fact table with one row per transaction; `Stores`, `Products`, and `Dates` are dimensions. |
+| Power Query Editor | Where you connect to the source, review the data, correct data types, standardize inconsistent values, remove blank or error rows, and add calculated columns before loading into the model. |
+| Semantic model | The shaped tables plus the relationships between them — a classic star schema with `Sales` at the center and `Stores`, `Products`, `Dates` around it. |
+| Relationships | Three one-to-many links: `Stores` → `Sales`, `Products` → `Sales`, `Dates` → `Sales`. Cross-filter direction is Single. |
+| DAX measures | Explicit measures written on the model. `Total Sales` sums `SalesAmount`; `% of Total Sales` returns each row's contribution to the grand total using `DIVIDE` and `ALL`. |
+| Store Performance report | A single interactive page with KPI cards (Total Sales, Total Units, Top Store), a bar chart, line chart, table, and map, plus slicers, a page-level filter, drill-down on the line chart, and cross-filtering between visuals. |
+| Power BI Service | The cloud service where the finished report is published, shared, and (optionally) scheduled for refresh. |
+ 
 
 ## 🚀 Getting Started with the Lab
 
