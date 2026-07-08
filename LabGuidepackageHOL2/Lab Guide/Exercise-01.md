@@ -4,7 +4,7 @@
 
 ## 📘 Scenario
 
-The **Item Sales Report** — a pre-built `.pbix` file provided in your lab environment — currently lives only in Power BI Desktop on your lab machine. Contoso Retail's leadership team wants this report available in the cloud — viewable from any device, summarized in a single executive dashboard, shared with the right people at the right permission level, and refreshed automatically every day.
+The **StorePerformanceReport** — a pre-built `.pbix` file provided in your lab environment — currently lives only in Power BI Desktop on your lab machine. Contoso Retail's leadership team wants this report available in the cloud — viewable from any device, summarized in a single executive dashboard, shared with the right people at the right permission level, and refreshed automatically every day.
 
 In this exercise, you will move your report to the Power BI Service and make it available to your audience: you will publish the report and its semantic model, build a dashboard from its key visuals, review the three primary sharing methods, and configure scheduled refresh.
 
@@ -25,7 +25,12 @@ In this exercise, you will complete the following tasks:
 
 ## Task 1: Launch the environment and open your working report
 
-In this task, you will open Power BI Desktop on the lab virtual machine and load the pre-built Item Sales Report provided for this lab. Verifying the report opens cleanly is an important checkpoint before publishing — any broken visuals or data errors will be carried into the Power BI Service.
+In this task, you will open Power BI Desktop on the lab virtual machine and load the pre-built StorePerformanceReport provided for this lab. Verifying the report opens cleanly is an important checkpoint before publishing — any broken visuals or data errors will be carried into the Power BI Service.
+
+1. On the edge browser, click on new tab and paste below link to download the file.
+`https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/StorePerformanceReport.pbix`
+
+   ![](./Images/images/exercise-1/e1s1.png)
 
 1. On the lab VM, from the desktop or Start menu, open **Power BI Desktop**.
 
@@ -65,25 +70,25 @@ In this task, you will open Power BI Desktop on the lab virtual machine and load
 
    ![](./Images/images/exercise-1/L2E1T1S8.png)
 
-1. In the **Open** dialog, navigate to the path **C:\LabFiles (1)** and select the **Item Sales Report.pbix (2)** file, then click **Open (3)**.
+1. In the **Open** dialog, navigate to the path **Downloads (1)** and select the **StorePerformanceReport.pbix (2)** file, then click **Open (3)**.
 
-   ![](./Images/images/exercise-1/L2E1T1S9.png)
-
-   > **Note**: If the file is not found at this path, check the **Resources/Files** section of your lab environment for the provided **Item Sales Report.pbix**.
+   ![](./Images/images/exercise-1/e1s2.png)
 
 1. Wait for the report to load completely.
 
 1. Review each report page and confirm that all visuals render correctly without error icons.
 
-   ![](./Images/images/exercise-1/L2E1T1S10.png)
+   ![](./Images/images/exercise-1/e1s3.png)
 
 1. Click the **Save** icon from the top-left corner to save your workbook with all the changes you've made.
 
-   ![](./Images/images/exercise-1/L2E1T1S11.png)
+   ![](./Images/images/exercise-1/e1s4.png)
 
 ## Task 2: Power BI Service – Creating a Workspace
 
 In this task, you will create a workspace in the Power BI Service.
+
+1. Navigate back toedge browser, and open power bi tab.
 
 1. In the left-hand navigation pane of the Power BI interface, select **Workspaces** to view and manage your available workspaces.
    
@@ -95,9 +100,9 @@ In this task, you will create a workspace in the Power BI Service.
 
 1. On the **Create a workspace** page, provide the following details.
 
-    - In the **Name** field, enter **DIAD_<inject key="DeploymentID" enableCopy="false"/> (1)**.
+    - In the **Name** field, enter **PowerBI_<inject key="DeploymentID" enableCopy="false"/> (1)**.
 
-    - In the **Description** field, type **This is DIAD workspace (2)**.
+    - In the **Description** field, type **This is Power BI workspace (2)**.
 
     - Click **Upload (3)** to upload an image that will serve as the workspace logo and help identify your workspace visually.
 
@@ -159,7 +164,7 @@ In this task, you will publish your report — and the semantic model behind it 
 
    ![](./Images/images/exercise-1/L2E1T3S5.png)
 
-1. On the success message, click **Open 'Item Sales Report.pbix' in Power BI** to open the published report in the browser.
+1. On the success message, click **Open 'StorePerformanceReport.pbix' in Power BI** to open the published report in the browser.
 
    ![](./Images/images/exercise-1/L2E1T3S6.png)
 
@@ -169,8 +174,8 @@ In this task, you will publish your report — and the semantic model behind it 
 
 1. Verify that the workspace now contains **both** of the following items:
 
-   - The **Item Sales Report** (type: Report)
-   - The **Item Sales Report** semantic model (type: Semantic model)
+   - The **StorePerformanceReport** (type: Report)
+   - The **StorePerformanceReport** semantic model (type: Semantic model)
 
       ![](./Images/images/exercise-1/L2E1T3S8.png)
 
@@ -180,7 +185,7 @@ In this task, you will publish your report — and the semantic model behind it 
 
 In this task, you will create a consolidated executive view by pinning key report visuals to a new dashboard. Unlike a report, a dashboard is a single-page canvas that can combine tiles from multiple reports — ideal for at-a-glance monitoring by leadership.
 
-1. In the Power BI Service, from the workspace, open the **Item Sales Report**.
+1. In the Power BI Service, from the workspace, open the **StorePerformanceReport**.
 
    ![](./Images/images/exercise-1/L2E1T4S1.png)
 
@@ -241,7 +246,7 @@ In this task, you will review the three primary ways to share content in the Pow
 
    ![](./Images/images/exercise-1/L2E1T5S5.png)
 
-1. Open the **Item Sales Report (1)** and, from the top menu, click **Share (2)**.
+1. Open the **StorePerformanceReport (1)** and, from the top menu, click **Share (2)**.
 
    ![](./Images/images/exercise-1/L2E1T5S6.png)
 
@@ -271,7 +276,7 @@ In this task, you will review the three primary ways to share content in the Pow
 
      ![](./Images/images/exercise-1/L2E1T5S10.png)
 
-1. On the **Content** tab, click **+ Add content (1)**, select the **Item Sales Report** and the **Executive Dashboard (2)**, click **Add (3)**, and review the navigation order, then click **Next: Add audience (4)**.
+1. On the **Content** tab, click **+ Add content (1)**, select the **StorePerformanceReport** and the **Executive Dashboard (2)**, click **Add (3)**, and review the navigation order, then click **Next: Add audience (4)**.
 
    ![](./Images/images/exercise-1/L2E1T5S11.png)
 
@@ -287,7 +292,7 @@ In this task, you will review the three primary ways to share content in the Pow
 
 In this task, you will configure the published semantic model to refresh on a schedule so that the report and dashboard always reflect current data without any manual steps.
 
-1. In the workspace, locate the **Item Sales Report** semantic model.
+1. In the workspace, locate the **StorePerformanceReport** semantic model.
 
    ![](./Images/images/exercise-1/L2E1T6S1.png)
 
