@@ -157,9 +157,11 @@ In this task, you will add presentation elements — a background, section shape
 
 1. Click an empty area of the report page you are polishing so no visual is selected.
 
+   ![](./Images/L2E2T3S1.png)
+
 1. In the **Visualizations** pane, select **Format page (paintbrush icon)** and expand **Canvas background**.
 
-   ![](./Images/L2E2T3S1.png)
+   ![](./Images/L2E2T3S2.png)
 
 1. Configure the canvas background:
 
@@ -168,13 +170,13 @@ In this task, you will add presentation elements — a background, section shape
    - **Image fit (3)**: Fit
    - **Transparency (4)**: Adjust (for example, **85%**) so all visuals remain fully readable
 
-   ![](./Images/L2E2T3S2.png)
+   ![](./Images/L2E2T3S3.png)
 
    > **Note**: Also review the **Wallpaper** setting, which formats the area *outside* the report canvas — useful for widescreen presentation displays.
 
-1. On the **Insert** ribbon, select **Shapes (1)** and choose **Rectangle (2)**.
+1. On the **Insert (1)** ribbon, select **Shapes (2)** and choose **Rectangle (3)**.
 
-   ![](./Images/L2E2T3S3.png)
+   ![](./Images/L2E2T3S4.png)
 
 1. Resize and position the rectangle across the top of the page to act as a **title banner**, and format it:
 
@@ -182,7 +184,7 @@ In this task, you will add presentation elements — a background, section shape
    - **Border (2)**: Off, or a subtle darker shade
    - Send it behind other elements if needed using **Format > Send backward**
 
-   ![](./Images/L2E2T3S4.png)
+   ![](./Images/L2E2T3S6.png)
 
 1. Add one or two thin **Line** shapes to visually separate sections of the page (for example, KPIs at the top from detail charts below).
 

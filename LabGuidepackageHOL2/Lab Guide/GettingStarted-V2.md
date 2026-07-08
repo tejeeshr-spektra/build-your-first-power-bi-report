@@ -4,26 +4,34 @@
 
 ## 📘 Overview
 
-In this hands-on lab, you will take a pre-built Power BI report — the **Store Performance Report**, provided for you in the lab environment — on its next journey — from a local `.pbix` file on your desktop to a fully published, shareable, and visually polished business asset in the Power BI Service.
+You are the analyst at **Contoso Retail** who built the **Store Performance report** in Hands-on Lab 1 — a single-page report with KPI cards, a Sales-by-Store bar chart, a Sales Trend line chart, a store-location map, and DAX measures for Total Sales and % of Total Sales. In this lab, you take that report on its next journey: from a local `.pbix` file on the lab VM to a published, shared, refreshed, and design-polished business asset in the **Power BI Service**.
 
-You will begin by publishing the report and its semantic model to the Power BI Service, pinning its key visuals into an **Executive Dashboard**, exploring the three primary sharing methods (workspace roles, direct sharing, and apps), and configuring **scheduled refresh** so the data stays current without manual effort. You will then return to the report itself and apply professional design polish — layout grids, themes, conditional formatting, branded design elements, custom AppSource visuals, interactive tooltips, bookmarks, buttons, and finally an AI-generated narrative summary using **Copilot in Power BI**.
+You will first publish the report and its semantic model to a workspace, pin its key visuals into an **Executive Dashboard**, walk through the three primary sharing methods (workspace roles, direct sharing, and Power BI apps), and configure **scheduled refresh** so the data stays current without manual effort. You will then return to the report itself and apply professional design polish — a layout grid and brand theme, conditional formatting, backgrounds and shapes, a certified custom visual from **AppSource**, interactive tooltips, bookmarks, and buttons, and finally an AI-generated narrative summary using **Copilot in Power BI**.
 
-By the end of this lab, you will have transformed a working report into a board-ready, interactive analytics experience that is published, shared, refreshed, and enhanced according to modern Power BI best practices.
+By the end of this lab, you will have transformed a working report into a board-ready, interactive analytics experience that is published, shared, refreshed, and enhanced according to modern Power BI practice.
 
-## 📋 Objective
+> **Note**: A pre-built copy of the Store Performance report (`StorePerformanceReport.pbix`) is provided on the lab VM at `C:\LabFiles\`, so you can complete this lab whether or not you finished HOL 1.
 
-This lab is designed to equip participants with hands-on experience in publishing, sharing, and enhancing Power BI content in the Power BI Service. By completing this lab, you will learn to:
+## 📋 Objectives
 
-- **Publish and Share Your Work**: Publish a Power BI Desktop report to the Power BI Service, build a dashboard by pinning report visuals, review workspace roles and sharing methods (direct sharing, links, and apps), and configure scheduled refresh for the published semantic model.
-- **Create a Visually Engaging Dashboard**: Apply a layout grid and theme with brand colours, add conditional formatting to highlight insights, enhance the page with backgrounds, shapes, and subtle design elements, import custom visuals from AppSource, add tooltips, bookmarks, and buttons for interactivity, and generate a narrative summary with Copilot.
+After completing this lab you will be able to:
+
+- Publish a Power BI Desktop report and its semantic model to a workspace in the Power BI Service.
+- Build an **executive dashboard** by pinning report visuals as tiles.
+- Compare and apply the three primary sharing methods — workspace roles, direct sharing, and Power BI apps.
+- Configure **scheduled refresh** so the published semantic model stays current.
+- Apply a layout grid and brand theme, add conditional formatting, and use backgrounds, shapes, and card effects to give the report a board-ready look.
+- Import a **certified custom visual** from AppSource and configure it against Contoso data.
+- Add interactivity with tooltip pages, bookmarks, and buttons.
+- Generate an AI-narrative summary of the report using **Copilot in Power BI** and validate the output against the visuals.
 
 ## ✅ Pre-requisites
 
-Participants should have the following prerequisites before starting this lab:
+Before starting this lab you should have:
 
-- **Store Performance Report (`.pbix`)**: A pre-built starter report is provided for you at **C:\LabFiles** on the lab virtual machine — no prior lab or setup is required.
-- **Basic familiarity with Power BI Desktop**: Understanding of report pages, visuals, and the Visualizations pane.
-- **Basic understanding of the Power BI Service**: Awareness of workspaces, reports, dashboards, and semantic models (datasets).
+- **Store Performance report** (`StorePerformanceReport.pbix`) — provided for you at `C:\LabFiles\` on the lab virtual machine. No prior lab or setup is required.
+- **Basic familiarity with Power BI Desktop** — report pages, visuals, and the Visualizations pane.
+- **Basic understanding of the Power BI Service** — workspaces, reports, dashboards, and semantic models (datasets).
 
 > **Note**: Some features used in this lab — sharing, app publishing, scheduled refresh, AppSource visuals, and Copilot — depend on tenant settings, licensing, and administrator permissions. Where a feature is not available in the lab environment, the guide instructs you to review the option and document the dependency instead.
 
@@ -112,18 +120,18 @@ Use the **slider (three vertical dots)** located between the **Virtual Machine**
 
    ![](./Images/gs-10.png)
 
-   > **Note**:If you recieve a pop up saying that microsoft fabric trail is autmatically assigned for the user and click on **OK**.
+   > **Note**: If you see a pop-up saying that the Microsoft Fabric trial has been automatically assigned to the user, click **OK**.
    >
-   >![slider](./Images/images/note.png) 
+   > ![](./Images/images/note.png)
 
 
-1. From the Power BI home page, select **Account Manager (1)** from the top-right corner and click **Trail_Section_Button_S.. (2)** to activate the Microsoft Fabric trial.
+1. From the Power BI home page, select **Account Manager (1)** from the top-right corner and click **Start trial (2)** to activate the Microsoft Fabric trial.
 
    ![](./Images/gs-11.png)
 
    > **Note:** The trial is enabled to ensure that your account has access to Power BI Pro and Fabric features, including sharing and Copilot experiences used later in this lab.
 
-1. On the **Your Power Bi trail is active** window, click on **Got it**.
+1. On the **Your Power BI trial is active** window, click **Got it**.
 
    ![](./Images/gs-12.png)
    
@@ -132,6 +140,10 @@ Use the **slider (three vertical dots)** located between the **Virtual Machine**
    ![](./Images/gs-14.png)
 
 1. Keep this browser session signed in — you will return to the Power BI Service after publishing your report from Power BI Desktop.
+
+## 📝 Summary
+
+In this lab, you took the Contoso Retail **Store Performance** report from a local `.pbix` file to a published, shared, refreshed, and design-polished business asset in the Power BI Service. You published to a workspace, built an executive dashboard, walked through workspace roles / direct sharing / app-based distribution, and configured scheduled refresh. You then applied a brand theme with conditional formatting, added backgrounds and card effects, brought in a certified custom visual from AppSource, wired up tooltips and bookmarks with a toggle button, and generated an AI-narrative summary with Copilot. The result is a board-ready report that stays current on its own and can be delivered to leadership through the sharing channel that fits their audience.
 
 ## 🆘 Lab Support
 
