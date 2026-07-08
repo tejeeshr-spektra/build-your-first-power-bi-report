@@ -109,10 +109,10 @@ In this task, you will note the URLs for the Contoso Retail CSV files. You will 
 
    | File | URL |
    |---|---|
-   | Stores | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Stores.csv` |
-   | Products | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Products.csv` |
-   | Dates | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Dates.csv` |
-   | Sales | `https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Sales.csv` |
+   | Stores | `https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Stores.csv` |
+   | Products | `https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Products.csv` |
+   | Dates | `https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Dates.csv` |
+   | Sales | `https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Sales.csv` |
 
 2. Review what each CSV contains:
 
@@ -151,7 +151,7 @@ In this task, you will use the **Web** connector in Power BI Desktop to connect 
 2. In the **From Web** dialog, leave the mode on **Basic (1)** and paste the `Sales.csv` (2) URL. Select **OK (3)**.
 
    ```
-   https://<STORAGE_ACCOUNT>.blob.core.windows.net/<CONTAINER>/Sales.csv
+   https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Sales.csv
    ```
 
    ![](../media/e1s16.png)
@@ -178,7 +178,7 @@ In this task, you will use the **Web** connector in Power BI Desktop to connect 
 
    ![](../media/e1s19.png)
 
-2. Paste the `Stores.csv` URL, select **OK**, and if prompted keep **Anonymous** authentication.
+2. Paste the `Stores.csv` URL: https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Stores.csv, select **OK**, and if prompted keep **Anonymous** authentication.
 
    ![](../media/e1s20.png)
 
@@ -188,8 +188,9 @@ In this task, you will use the **Web** connector in Power BI Desktop to connect 
 
 4. Repeat for the remaining two files:
 
-   - `Products.csv`
-   - `Dates.csv`
+   - `Products.csv` : https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Products.csv
+
+   - `Dates.csv` : https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Dates.csv
 
    ![](../media/e1s22.png)
 
