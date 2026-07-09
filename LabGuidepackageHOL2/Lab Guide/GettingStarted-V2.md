@@ -6,7 +6,7 @@
 
 You are the analyst at **Contoso Retail** who built the **Store Performance report** in Hands-on Lab 1, a single-page report with KPI cards, a Sales-by-Store bar chart, a Sales Trend line chart, a store-location map, and DAX measures for Total Sales and % of Total Sales. In this lab, you take that report on its next journey: from a local `.pbix` file on the lab VM to a published, shared, refreshed, and design-polished business asset in the **Power BI Service**.
 
-You will first publish the report and its semantic model to a workspace, pin its key visuals into an **Executive Dashboard**, walk through the three primary sharing methods (workspace roles, direct sharing, and Power BI apps), and configure **scheduled refresh** so the data stays current without manual effort. You will then return to the report itself and apply professional design polish — a layout grid and brand theme, conditional formatting, backgrounds and shapes, a certified custom visual from **AppSource**, interactive tooltips, bookmarks, and buttons, and finally an AI-generated narrative summary using **Copilot in Power BI**.
+You will first publish the report and its semantic model to a workspace, pin its key visuals into an **Executive Dashboard**, walk through the three primary sharing methods (workspace roles, direct sharing, and Power BI apps), and configure **scheduled refresh** so the data stays current without manual effort. You will then return to the report itself and apply professional design polish - a layout grid and brand theme, conditional formatting, backgrounds and shapes, a certified custom visual from **AppSource**, interactive tooltips, bookmarks, and buttons, and finally an AI-generated narrative summary using **Copilot in Power BI**.
 
 By the end of this lab, you will have transformed a working report into a board-ready, interactive analytics experience that is published, shared, refreshed, and enhanced according to modern Power BI practice.
 
@@ -18,7 +18,7 @@ After completing this lab, you will be able to:
 
 - Publish a Power BI Desktop report and its semantic model to a workspace in the Power BI Service.
 - Build an **executive dashboard** by pinning report visuals as tiles.
-- Compare and apply the three primary sharing methods — workspace roles, direct sharing, and Power BI apps.
+- Compare and apply the three primary sharing methods - workspace roles, direct sharing, and Power BI apps.
 - Configure **scheduled refresh** so the published semantic model stays current.
 - Apply a layout grid and brand theme, add conditional formatting, and use backgrounds, shapes, and card effects to give the report a board-ready look.
 - Import a **certified custom visual** from AppSource and configure it against Contoso data.
@@ -29,11 +29,11 @@ After completing this lab, you will be able to:
 
 Before starting this lab, you should have:
 
-- **Store Performance report** (`StorePerformanceReport.pbix`) — provided for you at `C:\LabFiles\` on the lab virtual machine. No prior lab or setup is required.
-- **Basic familiarity with Power BI Desktop** — report pages, visuals, and the Visualizations pane.
-- **Basic understanding of the Power BI Service** — workspaces, reports, dashboards, and semantic models (datasets).
+- **Store Performance report** (`StorePerformanceReport.pbix`) - provided for you at `C:\LabFiles\` on the lab virtual machine. No prior lab or setup is required.
+- **Basic familiarity with Power BI Desktop** - report pages, visuals, and the Visualizations pane.
+- **Basic understanding of the Power BI Service** - workspaces, reports, dashboards, and semantic models (datasets).
 
-> **Note**: Some features used in this lab — sharing, app publishing, scheduled refresh, AppSource visuals, and Copilot — depend on tenant settings, licensing, and administrator permissions. Where a feature is not available in the lab environment, the guide instructs you to review the option and document the dependency instead.
+> **Note**: Some features used in this lab - sharing, app publishing, scheduled refresh, AppSource visuals, and Copilot - depend on tenant settings, licensing, and administrator permissions. Where a feature is not available in the lab environment, the guide instructs you to review the option and document the dependency instead.
 
 ## 🏗️ Architecture
 
@@ -138,7 +138,7 @@ Use the **slider (three vertical dots)** located between the **Virtual Machine**
 
    ![](./Images/gs-14.png)
 
-1. Keep this browser session signed in — you will return to the Power BI Service after publishing your report from Power BI Desktop.
+1. Keep this browser session signed in - you will return to the Power BI Service after publishing your report from Power BI Desktop.
 
 ## 📝 Summary
 
