@@ -158,7 +158,7 @@ In this task, you will build one report page with five core visuals: a bar chart
 
       ![](../media/e2s18.png)
 
-!. Close the Power Bi Report and open again from path C:\LabFiles\StorePerformanceReport.pbix
+1. Close the Power Bi Report and open again from path C:\LabFiles\StorePerformanceReport.pbix
 
       ![](../media/e2s21.png)
 

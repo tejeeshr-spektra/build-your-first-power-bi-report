@@ -35,7 +35,7 @@ In this task, you will create a proper DAX measure for total sales. Until now yo
 
 2. In the **Data** pane on the right, right-click the **`Sales` (1)** table name and select **New measure (2)**.
 
-   > [!Tip]
+   > **Tip:**
    > Right-clicking the table you want the measure to live in ensures the measure appears under that table in the field list.
 
    ![](../media/E3T1S2.png)
@@ -80,7 +80,7 @@ In this task, you will create a proper DAX measure for total sales. Until now yo
 
 In this task, you will create a measure that returns each row's share of total sales. You will then add it to the store × category table so viewers can see contribution percentages.
 
-1. In the **Data** pane, right-click the **`Sales`(1)** table and select **New measure (2)**.
+1. In the **Data** pane, right-click the **Sales (1)** table and select **New measure (2)**.
 
    ![](../media/E3T1S2.png)
 
@@ -97,7 +97,7 @@ In this task, you will create a measure that returns each row's share of total s
 
 3. Press **Enter** or select the **✓** checkmark to commit the measure.
 
-   > [!Note]
+   > **Note:**
    > `DIVIDE` handles divide-by-zero safely (it returns blank instead of an error). `ALL(...)` on the fact table and each dimension removes filters from those tables in the denominator so it always returns the grand total.
 
    ![](../media/E3T2S3.png)
@@ -121,7 +121,7 @@ In this task, you will create a measure that returns each row's share of total s
 
 6. In the table, each row now shows the share that store/category combination contributes to the total sales. Confirm the percentages sum to 100% when there is no filter applied.
 
-   > [!Tip]
+   > **Tip:**
    > If you filter by region using the slicer, `Total Sales` recalculates for the filter but `% of Total Sales` still divides by the **overall** total (because of `ALL(...)`). If you want the percentage to reset to 100% within the current selection, change the denominator to use `ALLSELECTED(...)` instead of `ALL(...)`.
 
      ![](../media/E3T2S6.png)
