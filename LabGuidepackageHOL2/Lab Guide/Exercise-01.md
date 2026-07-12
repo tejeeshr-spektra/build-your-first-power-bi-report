@@ -27,7 +27,7 @@ In this exercise, you will complete the following tasks:
 
 In this task, you will open Power BI Desktop on the lab virtual machine and load the pre-built StorePerformanceReport provided for this lab. Verifying the report opens cleanly is an important checkpoint before publishing - any broken visuals or data errors will be carried into the Power BI Service.
 
-1. In your LabVM, open a new broser tab in edge browser, click on new tab and paste below link to download the file. `https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/StorePerformanceReport.pbix`
+1. In your LabVM, open a new browser tab in the Edge browser, click on a new tab, and paste the link below to download the file. `https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/StorePerformanceReport.pbix`
 
    ![](./Images/images/exercise-1/e1s1.png)
 
@@ -107,7 +107,7 @@ In this task, you will create a workspace in the Power BI Service.
 
       ![](./Images/images/exercise-1/e1s5.png)
       
-1. If prompted Introducing task flows, Click on **Got it** to proceed.
+1. If prompted, Introducing task flows, click on **Got it** to proceed.
 
     ![](./Images/images/exercise-1/NOTE.png)
     
@@ -156,11 +156,11 @@ In this task, you will publish your report - and the semantic model behind it - 
 
 In this task, you will create a consolidated executive view by pinning key report visuals to a new dashboard. Unlike a report, a dashboard is a single-page canvas that can combine tiles from multiple reports - ideal for at-a-glance monitoring by leadership.
 
-1. From the PowerBI Workspace, open the **StorePerformanceReport** (Type: Report).
+1. From the Power BI Workspace, open the **StorePerformanceReport** (Type: Report).
 
    ![](./Images/images/exercise-1/e1s11.png)
 
-1. Navigate to the report page and identify a visual that represents a key business metric, such as sales trend.
+1. Navigate to the report page and identify a visual that represents a key business metric, such as a sales trend.
 
    ![](./Images/images/exercise-1/e1s12.png)
 
