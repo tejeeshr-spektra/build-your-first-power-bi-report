@@ -1,18 +1,18 @@
 [
     {
-        "Name": "Challenge Lab Board-Ready Dashboard Challenge",
+        "Name": "Challenge Lab Board-Ready Dashboard Challenge",
         "Language": "English",
         "Files": [
           {
-            "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/multi-agent-orchestration-with-a2-a-My1Ff/refs/heads/main/Labguides/gettingstarted.md",
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/build-your-first-power-bi-report/refs/heads/main/LabGuideChallenge/ChallengeGuide/Gettingstartedpage.md",
             "Order": 1
           },           
           {
-            "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/multi-agent-orchestration-with-a2-a-My1Ff/refs/heads/main/Labguides/Exercise-1.md",
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/build-your-first-power-bi-report/refs/heads/main/LabGuideChallenge/ChallengeGuide/Ex-1.md",
             "Order": 2
           },  
           {
-            "RawFilePath": "https://docs-api.cloudlabs.ai/repos/raw.githubusercontent.com/CloudLabsAI-Azure/multi-agent-orchestration-with-a2-a-My1Ff/refs/heads/main/Labguides/Exercise-2.md",
+            "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/build-your-first-power-bi-report/refs/heads/main/LabGuideChallenge/ChallengeGuide/Ex-2.md",
             "Order": 3
           }
         ]
