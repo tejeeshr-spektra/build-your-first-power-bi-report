@@ -1,4 +1,4 @@
-# Exercise 2: Stretch goals and submission
+# Challenge 2: Stretch goals and submission
 
 ### Estimated Duration: 120 Minutes
 

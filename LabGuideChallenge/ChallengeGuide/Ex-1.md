@@ -1,4 +1,4 @@
-# Exercise 1: Build the dashboard
+# Challenge 1: Build the dashboard
 
 ### Estimated Duration: 120 Minutes
 
