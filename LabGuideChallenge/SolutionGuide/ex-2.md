@@ -2,11 +2,15 @@
 
 ### Estimated Duration: 120 Minutes
 
-## Overview
+## 📘 Lab Scenario
+
+With the Sales Performance dashboard built, leadership has raised a new concern: regional managers should only see the numbers relevant to their own region, and the board wants the report to speak for itself with an AI-generated narrative rather than requiring a live walkthrough. As the Business Intelligence Analyst, you must lock down the report with Row-Level Security, enrich it with a Copilot-generated summary and a target-tracking visual, and then publish and submit a finished dashboard that will hold up against a formal evaluation rubric.
+
+## 📋 Overview
 
 In this exercise, you will enhance the Power BI dashboard by implementing Row-Level Security (RLS), generating AI-powered insights with Copilot, and adding a custom visual for target analysis. You will then publish the report to a Fabric workspace, export it as a PDF, and perform a comprehensive validation to ensure the dashboard is secure, accurate, and ready for business stakeholders.
 
-## Objectives
+## 🎯 Objectives
 
 In this exercise you will:
 
@@ -15,7 +19,6 @@ In this exercise you will:
 - Task 3: Add a custom visual
 - Task 4: Submit your dashboard (publish to a shared workspace or submit screenshots)
 - Task 5: Self-check against the evaluation rubric (Read-only)
-
 ## Task 1: Apply Row-Level Security by region
 
 In this task you will configure Row-Level Security (RLS) by creating region-based security roles using DAX filters on the Dim_Region table. Validate each role using View as to ensure users can access only the data for their assigned region.

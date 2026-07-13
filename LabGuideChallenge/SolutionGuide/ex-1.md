@@ -2,11 +2,15 @@
 
 ### Estimated Duration: 120 Minutes
 
-## Overview
+## 📘 Lab Scenario
+
+You are a Business Intelligence Analyst tasked with building the first version of a Sales Performance dashboard for leadership. You have been handed a raw sales dataset customer, product, region, sales rep, and budget files with no existing data model. Your job is to shape this raw data into a reliable model, surface the key revenue and margin metrics leadership cares about, and present it all in a clean, interactive, board-ready report.
+
+## 📋 Overview
 
 In this exercise, you will build a complete Power BI Sales Performance dashboard using a sample sales dataset. You will import and model data, create DAX measures, and design interactive report visuals. You will also apply themes and formatting to produce a professional, board-ready dashboard. Finally, you will validate the report to ensure it is accurate, interactive, and ready for business analysis.
 
-## Objectives
+## 🎯 Objectives
 
 In this exercise you will:
 
@@ -338,4 +342,6 @@ In this lab, you:
 - Designed interactive report visuals, including charts and slicers, for sales analysis.
 - Applied a custom theme and formatting to produce a professional, board-ready dashboard.
 
-### You have Successfully completed this lab
+## Click **Next >>** to continue to the next lab.
+
+![](../SolutionGuide/images/gsl.png)

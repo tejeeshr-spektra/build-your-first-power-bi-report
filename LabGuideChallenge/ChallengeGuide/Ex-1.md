@@ -2,11 +2,15 @@
 
 ### Estimated Duration: 120 Minutes
 
-## Overview
+## 📘 Lab Scenario
+
+You are a Business Intelligence Analyst tasked with building the first version of a Sales Performance dashboard for leadership. You have been handed a raw sales dataset customer, product, region, sales rep, and budget files with no existing data model. Your job is to shape this raw data into a reliable model, surface the key revenue and margin metrics leadership cares about, and present it all in a clean, interactive, board-ready report.
+
+## 📋 Overview
 
 In this exercise, you will build a complete Power BI Sales Performance dashboard using a sample sales dataset. You will import and model data, create DAX measures, and design interactive report visuals. You will also apply themes and formatting to produce a professional, board-ready dashboard. Finally, you will validate the report to ensure it is accurate, interactive, and ready for business analysis.
 
-## Objectives
+## 🎯 Objectives
 
 In this exercise you will:
 
@@ -17,6 +21,8 @@ In this exercise you will:
 - Task 5: Apply a theme
 
 ## Task 1: Review the brief and explore the dataset
+
+In this task you will verify that the required CSV dataset files are available and populated with sample data before importing them into Power BI.
 
 1. Open **File Explorer** and navigate to **C:\LabFiles\data**.
 
@@ -32,6 +38,8 @@ In this exercise you will:
 3. Open any one of the CSV files (for example, **Dim_Customer.csv**) in **Visual Studio Code** and verify that it contains sample data.
 
 ## Task 2: Model the Data
+
+In this task you will import the dataset into Power BI, create the required relationships, configure the date table and hierarchy, hide technical columns, and validate the data model.
 
 1. Open **Power BI Desktop** and create a **Blank report**.
 
@@ -52,6 +60,8 @@ In this exercise you will:
 
 ## Task 3: Create KPIs
 
+In this task you will create DAX measures for key business metrics, format them appropriately, and display them as KPI cards with meaningful titles.
+
 1. Create a new table named **_Measures** to store all DAX measures.
 
 2. Create a **Total Revenue** measure using DAX and format it as **Currency**.
@@ -70,6 +80,8 @@ In this exercise you will:
 
 ## Task 4: Create Charts and a Slicer
 
+In this task you will create charts and slicers, configure sorting and filtering, and format the visuals to build an interactive sales performance report.
+
 1. Create a **Line chart** using **MonthName** from **Dim_Date** and **Total Revenue** from the **_Measures** table.
 
 2. Create a **Clustered bar chart** using **Country** from **Dim_Region** and **Total Revenue** from the **_Measures** table.
@@ -87,6 +99,8 @@ In this exercise you will:
 8. Rename the bar chart title to **Revenue by Region**.
 
 ## Task 5: Apply a Theme
+
+In this task you will apply and customize a report theme, add a dashboard title, and arrange the visuals into a polished, board-ready dashboard.
 
 1. Apply a **Dark** theme to the report from the **View** tab.
 
