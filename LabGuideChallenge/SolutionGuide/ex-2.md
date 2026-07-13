@@ -98,7 +98,7 @@ In this task you will use Copilot in Power BI to generate an AI-powered summary 
 
     ![](images1/gs7.png)
 
-4. Enter the lab-provided password (1), and then select **Sign in (2)**.
+4. Enter the lab-provided **password (1)**, and then select **Sign in (2)**.
 
     **Temporaray Access Pass**: <inject key="AzureAdUserPassword"></inject> **(1)**
 
@@ -118,13 +118,33 @@ In this task you will use Copilot in Power BI to generate an AI-powered summary 
     https://app.fabric.microsoft.com
     ```
 
-7. If a Fabric workspace does not already exist, create one by selecting **New workspace (1)**, entering a unique workspace name **(2)**.
+1. In the **Enter your email address (1)** dialog box, enter the lab-provided email address (1), and then select **Submit (2)**.
+
+    **Email/Username**: <inject key="AzureAdUserEmail"></inject> **(1)**
+
+    ![](images1/fabloguser.png)
+
+1. In the **Password (1)** dialog box, enter the lab-provided email address (1), and then select **Submit (2)**.
+
+    **Temporaray Access Pass**: <inject key="AzureAdUserPassword"></inject> **(1)**
+
+    ![](images1/fablogpass.png)
+
+1. Select **Yes**.
+
+    ![](images1/fablogyes.png)
+
+7. If a Fabric workspace does not already exist, create one by selecting **New workspace (1)**, entering name **Fabric<inject key="DeploymentID"></inject> (2)**.
 
     ![](images1/nl1.png)
 
 1. Select **PowerBI Pro** License and click on **Apply.**
 
     ![](images1/nl2.png)
+
+1. Create a second Fabric Workspace, with name **Fabric<inject key="DeploymentID"></inject>-1**. Select **Fabric** and click on **Apply**.
+
+    ![](images1/secndwrkspc.png)
 
 8. In Power BI Desktop, select **Copilot (1)**, and then select **Select a workspace (2)**.
 
@@ -202,49 +222,49 @@ In this task you will create a new DAX measure for target revenue and build a Bu
 
 In this task you will save the completed report, publish it to a Fabric workspace, verify the published artifacts, and export the report as a PDF for sharing with stakeholders.
 
-24. Select **File**, and then select **Save as**.
+1. Select **File**, and then select **Save as**.
 
     ![](images1/t4s1.png)
 
-25. Select **Save as (1)**, choose the **Documents** folder from the **Recent (2)** list (or another preferred location), and then select **Documents (3)**.
+1. Select **Save as (1)**, choose the **Documents** folder from the **Recent (2)** list (or another preferred location), and then select **Documents (3)**.
 
     ![](images1/t4s2.png)
 
-26. Enter **Board-Ready-Dashboard** as the file name (1), and then select **Save (2)**.
+1. Enter **Board-Ready-Dashboard** as the file name (1), and then select **Save (2)**.
 
     ![](images1/t4s3.png)
 
-27. Return to the report, select the **Home (1)** tab, and then select **Publish (2)**.
+1. Return to the report, select the **Home (1)** tab, and then select **Publish (2)**.
 
     ![](images1/t4s5.png)
 
-28. In the **Publish to Power BI** dialog, select the **Fabric workspace (1)**, and then select **Select (2)**.
+1. In the **Publish to Power BI** dialog, select the **Fabric workspace (1)**, and then select **Select (2)**.
 
     ![](images1/t4s6.png)
 
-29. If prompted to upgrade your Power BI license, select **Try free** to start the trial.
+1. If prompted to upgrade your Power BI license, select **Try free** to start the trial.
 
     ![](images1/t4s7.png)
 
-30. After the report is published successfully, select **Got it**.
+1. After the report is published successfully, select **Got it**.
 
     ![](images1/t4s8.png)
 
-31. In the Fabric portal, verify that the **Fabric workspace (1)** contains both the **Board-Ready-Dashboard report** and its associated **semantic model (2)**.
+1. In the Fabric portal, verify that the **Fabric workspace (1)** contains both the **Board-Ready-Dashboard report** and its associated **semantic model (2)**.
 
     ![](images1/t4s9.png)
 
-32. Select **File**, and then select **Export**.
+1. Select **File**, and then select **Export**.
 
     ![](images1/t4s10.png)
 
-33. Select **Export to PDF**.
+1. Select **Export to PDF**.
 
     ![](images1/t4s11.png)
 
     ![](images1/t4s12.png)
 
-34. Verify that the report is successfully exported and opens as a PDF containing the completed **Sales Performance – Board View** dashboard.
+1. Verify that the report is successfully exported and opens as a PDF containing the completed **Sales Performance – Board View** dashboard.
 
     ![](images1/t4s13.png)
 

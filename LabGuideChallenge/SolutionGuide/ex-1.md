@@ -24,9 +24,13 @@ In this task you will verify that the required CSV dataset files are available a
 
     ![](images/t1s1.png)
 
+    **Note:** If you are not able to see the files here, kindly wait for 15 minutes and refresh.
+
 1. Verify that the generated dataset contains the required CSV files, including **Dim_Customer (1)**, **Dim_Date**, **Dim_Product**, **Dim_Region**, **Dim_SalesRep**, **Fact_Budget**, and **Fact_Sales**.
 
     ![](images/t1s2.png)
+
+    **Note:** If you are not able to see the files here, kindly wait for 15 minutes and refresh.
 
 1. Open any of the generated CSV files, such as **Dim_Customer (1)**, in **Visual Studio Code** to verify that the dataset has been populated with sample records.
 
@@ -52,7 +56,7 @@ In this task you will import the dataset into Power BI, create the required rela
 
     ![](images/t2s4.png)
 
-1. Review the preview of the **Dim_Customer.csv** file, and then select **Transform Data**.
+1. Review the preview of the **Dim_Customer.csv** file, and then select **Load**.
 
     ![](images/t2s5.png)
 
@@ -119,6 +123,7 @@ In this task you will import the dataset into Power BI, create the required rela
 
 1. In the **Model** view, right-click the following columns in the **Fact_Sales** table, and then select **Hide in report view**:
    - **OrderID**
+   - **ProductID**
    - **RegionID**
    - **SalesRepID**
 
@@ -288,7 +293,7 @@ In this task you will create charts and slicers, configure sorting and filtering
 
     ![](images/t4s10.png)
 
-1. Confirm that **India** is selected in the slicer.
+1. Confirm that **India** is unselected in the slicer.
 
     ![](images/t4s11.png)
 
