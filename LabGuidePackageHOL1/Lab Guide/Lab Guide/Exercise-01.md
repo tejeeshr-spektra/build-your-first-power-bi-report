@@ -471,3 +471,7 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 ## Summary
 
 In this exercise you signed in to the Power BI service, toured Power BI Desktop, connected to the four Contoso Retail CSV files hosted in Azure Blob Storage, ran your first refresh, and shaped the data in Power Query. Your model has clean, typed data and working relationships, and your starter `StorePerformanceReport.pbix` is saved in the Evidence folder — ready for report building in Exercise 2.
+
+Now, click on **Next** from the lower right corner to move on to the next page.
+
+![](../media/toP3.png)
