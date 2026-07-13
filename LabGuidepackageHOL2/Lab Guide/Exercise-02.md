@@ -66,7 +66,7 @@ In this task, you will align the visuals on the canvas using gridlines and snap-
 
    ![](./Images/L2E2T1S9.png)
 
-1. Save the report by selecting **File > Save**.
+1. Save the report by selecting **File (1) > Save (2)**.
 
    ![](./Images/L2E2T1S8.png)
 
