@@ -2,10 +2,12 @@
 
 ### Overall Estimated Duration: 4 Hours
 
-## Overview
+## Lab Scenario
  
 You are a new business analyst for **Contoso Retail**, a fictional retail chain with stores across the United States. Contoso's leadership wants a single-page report that answers everyday retail questions: which stores sell the most, how sales trend over time, which product categories perform best, and how slicers or drill-down change the view.
- 
+
+## Lab Overview
+
 In this lab you will use **Power BI Desktop** on a Windows Lab VM to connect to four CSV files hosted in Azure Blob Storage — `Sales`, `Stores`, `Products`, and `Dates`. You will shape the data in Power Query, model the relationships, build an interactive **Store Performance** report, and add your first DAX measures. You will also sign in to the Power BI service so you can publish the report and continue with follow-on lab work.
  
 ## Objectives
@@ -19,11 +21,13 @@ After completing this lab you will be able to:
 - Build a single-page Store Performance report with KPI cards, charts, a table, a map, slicers, filters, drill-down, and cross-filtering.
 - Create beginner DAX measures such as `Total Sales` and `% of Total Sales`.
 - Save the PBIX file, DAX definitions, and report screenshot or export in the required Evidence folder on the Lab VM.
+
 ## Prerequisites
  
 - Familiarity with basic Windows tasks — File Explorer, launching desktop applications, saving files.
 - An Azure Active Directory account with a Power BI license (provided by CloudLabs and injected on the sign-in steps later on this page).
 - No prior Power BI, DAX, or Power Query experience required — the lab builds up from a blank Power BI Desktop canvas.
+
 ## Architecture
  
 The lab builds a small Power BI solution end-to-end. You start with four CSV source tables, shape them in Power Query, build a semantic model with relationships (a classic star schema), add DAX measures, and design an interactive report — all inside Power BI Desktop.
@@ -106,13 +110,13 @@ Use the **slider (three vertical dots)** located between the **Virtual Machine**
 
    > **Note**: If you receive a welcome tour pop-up, click **Cancel** or **Skip** to continue.
 
-1. From the Power BI home page, select **Account Manager (1)** from the top-right corner and click **Start trial (2)** to activate the Microsoft Fabric trial.
+1. From the Power BI home page, select **Account Manager (1)** from the top-right corner and click **Trial_Selection_Button_S (2)** to activate the Microsoft Fabric trial.
 
    ![](../media/gs-11.png)
 
    > **Note:** The trial is enabled to ensure that your account has access to Power BI Pro and Fabric features, including sharing and Copilot experiences used later in this lab.
 
-1. On the **Activate your 60-day fabric trial capacity** window, click **Activate**.
+   It may ask to the **Activate your 60-day fabric trial capacity** window, by clicking on **Activate**.
 
    ![](../media/gs-12.png)
 

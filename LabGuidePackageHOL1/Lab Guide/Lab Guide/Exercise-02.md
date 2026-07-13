@@ -115,6 +115,8 @@ In this task, you will build one report page with five core visuals: a bar chart
 
       ![](../media/e2s13.png)
 
+      **Note:** If the line Chart is showing data as expected, kindly review the instructions from Page-2, Task-5, **Shape the Sales query**.
+
 
 ### Table — Store × Category sales
 
@@ -158,7 +160,7 @@ In this task, you will build one report page with five core visuals: a bar chart
 
       ![](../media/e2s18.png)
 
-!. Close the Power Bi Report and open again from path C:\LabFiles\StorePerformanceReport.pbix
+1. Close the Power Bi Report and open again from path C:\LabFiles\StorePerformanceReport.pbix
 
       ![](../media/e2s21.png)
 
@@ -390,3 +392,7 @@ You can control which visuals a source visual cross-filters, cross-highlights, o
 ## Summary
 
 In this exercise you built the Store Performance report page with a bar chart, line chart, card KPIs, a category-by-store table, and a store map. You added a region slicer, a category slicer, and a date range slicer, plus a page-level filter for the year. You enabled drill-down on the line chart and confirmed that clicking one visual cross-filters the others. Your report is now interactive and saved. In Exercise 3 you will add DAX measures and finish preparing the evidence files.
+
+Now, click on **Next** from the lower right corner to move on to the next page.
+
+![](../media/toP4.png)

@@ -28,9 +28,9 @@ In this exercise you will:
 
 In this task, you will sign in to the Power BI service in a browser and confirm Power BI Desktop is installed on the lab VM.
 
-1. On the lab VM, open **Power BI**.
+1. On the lab VM, open **Power BI Desktop**.
 
-1. On the top right corner. Click on sign in.
+1. On the top right corner. Click on **Sign in**.
    
    ![](../media/e1s2.png)
 
@@ -58,6 +58,8 @@ In this task, you will sign in to the Power BI service in a browser and confirm 
 ## Task 2: Tour the Power BI Desktop environment
 
 In this task, you will identify the areas of Power BI Desktop you will use throughout the lab.
+
+1. Select **Blank Report** on the Power BI Desktop.
 
 1. On the left side of the window, locate the three view icons:
 
@@ -178,7 +180,11 @@ In this task, you will use the **Web** connector in Power BI Desktop to connect 
 
    ![](../media/e1s19.png)
 
-2. Paste the `Stores.csv` URL: https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Stores.csv, select **OK**, and if prompted keep **Anonymous** authentication.
+2. Paste the `Stores.csv` URL, select **OK**, and if prompted keep **Anonymous** authentication.
+
+   ```
+   https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Stores.csv
+   ```
 
    ![](../media/e1s20.png)
 
@@ -188,9 +194,17 @@ In this task, you will use the **Web** connector in Power BI Desktop to connect 
 
 4. Repeat for the remaining two files:
 
-   - `Products.csv` : https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Products.csv
+   - `Products.csv` 
+   
+      ```
+      https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Products.csv
+      ```
 
-   - `Dates.csv` : https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Dates.csv
+   - `Dates.csv` 
+   
+      ```
+      https://experienceazure.blob.core.windows.net/templates/powerbi-training/Assets/Dates.csv
+      ```
 
    ![](../media/e1s22.png)
 
@@ -275,6 +289,16 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
    - Change the type of the new `SalesAmount` column to **Fixed Decimal Number**.
 
       ![](../media/e1s32.png)
+   
+      > **Note:** If in `SalesAmount` column values have `Error`, Change Data Types for **Quantity,** **UnitPrice &** **DiscountPct**. Select each column,go to **Transform tab** (or right-click the selected headers) → Data Type → choose:
+      
+         
+      `Quantity` Whole Number
+
+      `UnitPrice` Decimal Number
+
+      `DiscountPct` Decimal Number
+
 
 6. Review the **Applied Steps** pane. You should see steps such as **Source**, **Promoted Headers**, **Changed Type**, **Removed Blank Rows**, **Removed Errors**, and **Added Custom**.
 
@@ -385,18 +409,37 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
    ![](../media/e1s44.png)
 
-1. Set:
+1. Set below values for each new relationship:
+   
+   For First Relationship:
+   
+   - `From table` : Choose **Sales**, Select **Date** column
+   - `To table` : Choose **Dates**, Select **Date** column
+   - `Cardinality` : **One to many (1:*)**
+   - `Cross filter direction` to **Single**
+   - **Save** it.
 
-   - Choose the first table and column (for example `Dates` → `Date`).
-   - Choose the second table and column (for example `Sales` → `Date`).
-   - Confirm **Cardinality** is **One to many (1:*)** or **Many to one (*:1)**.
-   - Set **Cross filter direction** to **Single**.
-   - Confirm **Make this relationship active** is selected.
-   - Select **Save**.
+   For Second Relationship:
+   
+   - `From table` : Choose **Sales**, Select **ProductID** column
+   - `To table` : Choose **Products**, Select **ProductID** column
+   - `Cardinality` : **One to many (1:*)**
+   - `Cross filter direction` to **Single**
+   - **Save** it.
+
+
+   For Third Relationship:
+   
+   - `From table` : Choose **Sales**, Select **StoreID** column
+   - `To table` : Choose **Stores**, Select **StoreID** column
+   - `Cardinality` : **One to many (1:*)**
+   - `Cross filter direction` to **Single**
+   - **Save** it.
+
 
       ![](../media/e1s45.png)
 
-1 ENsure all three relationship is present. Repeat above steps for any other missing relationships. Select **Close**.
+1. Ensure all three relationships are present. Repeat above steps for any other missing relationships. Select **Close**.
 
    ![](../media/e1s46.png)
 
@@ -416,15 +459,19 @@ In this task, you will apply beginner-friendly Power Query steps to prepare the 
 
 1. Select **File** > **Save As**.
 
-1. Select Browse this device.
+1. Select `Browse this device`.
 
 2. Navigate to `C:\LabFiles` path. The Add file name as StorePerformanceReport
 
-   > [!Important]
+   > **Important:**
    > Use this exact filename and folder. Later validations look for this file in the Evidence folder.
 
-3. Keep Power BI Desktop open — you will build the report visuals in Exercise 2.
+3. Keep Power BI Desktop open — you will build the report visuals in Exercise
 
 ## Summary
 
 In this exercise you signed in to the Power BI service, toured Power BI Desktop, connected to the four Contoso Retail CSV files hosted in Azure Blob Storage, ran your first refresh, and shaped the data in Power Query. Your model has clean, typed data and working relationships, and your starter `StorePerformanceReport.pbix` is saved in the Evidence folder — ready for report building in Exercise 2.
+
+Now, click on **Next** from the lower right corner to move on to the next page.
+
+![](../media/toP3.png)
