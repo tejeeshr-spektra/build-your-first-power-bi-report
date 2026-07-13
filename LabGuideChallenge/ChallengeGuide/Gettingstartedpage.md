@@ -1,4 +1,4 @@
-# Board-Ready Dashboard Challenge (L300: Advanced - Unguided)
+# Board-Ready Dashboard Challenge (L300: Advanced)
 
 ### Estimated Duration: 4 Hours
 
