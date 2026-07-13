@@ -28,7 +28,7 @@ In this exercise you will:
 
 In this task, you will sign in to the Power BI service in a browser and confirm Power BI Desktop is installed on the lab VM.
 
-1. On the lab VM, open **Power BI**.
+1. On the lab VM, open **Power BI Desktop**.
 
 1. On the top right corner. Click on **Sign in**.
    
@@ -58,6 +58,8 @@ In this task, you will sign in to the Power BI service in a browser and confirm 
 ## Task 2: Tour the Power BI Desktop environment
 
 In this task, you will identify the areas of Power BI Desktop you will use throughout the lab.
+
+1. Select **Blank Report** on the Power BI Desktop.
 
 1. On the left side of the window, locate the three view icons:
 
