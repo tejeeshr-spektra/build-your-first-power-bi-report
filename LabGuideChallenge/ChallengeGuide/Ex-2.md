@@ -8,11 +8,11 @@ With the Sales Performance dashboard built, leadership has raised a new concern:
 
 ## 📋 Overview
 
-In this exercise, you will enhance the Power BI dashboard by implementing Row-Level Security (RLS), generating AI-powered insights with Copilot, and adding a custom visual for target analysis. You will then publish the report to a Fabric workspace, export it as a PDF, and perform a comprehensive validation to ensure the dashboard is secure, accurate, and ready for business stakeholders.
+In this challenge, you will enhance the Power BI dashboard by implementing Row-Level Security (RLS), generating AI-powered insights with Copilot, and adding a custom visual for target analysis. You will then publish the report to a Fabric workspace, export it as a PDF, and perform a comprehensive validation to ensure the dashboard is secure, accurate, and ready for business stakeholders.
 
 ## 🎯 Objectives
 
-In this exercise, you will:
+In this challenge, you will:
 
 - Task 1: Apply Row-Level Security by region
 - Task 2: Add a Copilot narrative
@@ -96,7 +96,7 @@ In this task, you will review the semantic model, report visuals, interactions, 
 
 ## Summary
 
-In this lab, you:
+In this challenge, you have accomplished the following:
 
 - Configured and validated Row-Level Security (RLS) to restrict data access by region.
 - Used Copilot to generate an AI-powered narrative summarizing sales performance.
