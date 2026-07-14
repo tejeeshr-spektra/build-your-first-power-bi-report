@@ -27,15 +27,22 @@ In this task, you will verify that the required CSV dataset files are available 
 1. Open **File Explorer** and navigate to **C:\LabFiles\data**.
 
 2. Verify that the folder contains the following CSV files:
+   
    - **Dim_Customer.csv**
+
    - **Dim_Date.csv**
+
    - **Dim_Product.csv**
+
    - **Dim_Region.csv**
+
    - **Dim_SalesRep.csv**
+
    - **Fact_Budget.csv**
+
    - **Fact_Sales.csv**
 
-3. Open any one of the CSV files (for example, **Dim_Customer.csv**) in **Visual Studio Code** and verify that it contains sample data.
+4. Open any one of the CSV files (for example, **Dim_Customer.csv**) in **Visual Studio Code** and verify that it contains sample data.
 
 ## Task 2: Model the Data
 
@@ -52,11 +59,14 @@ In this task, you will import the dataset into Power BI, create the required rel
 5. Create a date hierarchy in the **Dim_Date** table using the **Year**, **Quarter**, **MonthName**, and **YearMonth** columns.
 
 6. Hide the technical columns in the **Fact_Sales** table:
+
    - **OrderID**
+
    - **RegionID**
+
    - **SalesRepID**
 
-7. Create a simple table visual using **RegionID** from **Dim_Region** and **Revenue** from **Fact_Sales** to verify that the relationships are working correctly.
+8. Create a simple table visual using **RegionID** from **Dim_Region** and **Revenue** from **Fact_Sales** to verify that the relationships are working correctly.
 
 ## Task 3: Create KPIs
 
@@ -116,7 +126,7 @@ In this task, you will apply and customize a report theme, add a dashboard title
 
 ## Summary
 
-In this lab, you:
+In this challenge, you have accomplished the following:
 
 - Verified the sales dataset and imported the required CSV files into Power BI.
 - Built a star schema data model with relationships, a date table, and hierarchies.
