@@ -132,30 +132,30 @@ Use the **slider (three vertical dots)** located between the **Virtual Machine**
 
 ![](./media/gg2.png)
 
-## Let's Get Started with Azure Portal
+## Let's Get Started with Power BI Service
  
 1. On your virtual machine, click on the **Microsoft Edge** icon.
 
 1. Navigate to Fabric portal by using the below link.
 
     ```
-    https://app.fabric.microsoft.com
+    https://app.powerbi.com/
     ```
 
-1. In the **Enter your email address (1)** dialog box, enter the lab-provided email address (1), and then select **Submit (2)**.
+1. On the **Sign in** page, enter the following email and click **Submit (2)**.
 
-    **Email/Username**: <inject key="AzureAdUserEmail"></inject> **(1)**
+   - **Email: (1)** <inject key="AzureAdUserEmail"></inject>
 
-    ![](../SolutionGuide/images1/fabloguser.png) 
+     ![](./media/pbi.png)
 
-1. In the **Password (1)** dialog box, enter the lab-provided email address (1), and then select **Submit (2)**.
+1. On the **Temporary Access Pass** screen, enter the following password and click **Sign in (2)**.
 
-    **Temporaray Access Pass**: <inject key="AzureAdUserPassword"></inject> **(1)**
+   - **Temporary Access Pass: (1)** <inject key="AzureAdUserPassword"></inject>
 
-    ![](../SolutionGuide/images1/fablogpass.png)
+     ![](./media/gs222.png)
 
      
-1. If you see the pop-up **Stay signed in?**, select **No**.
+1. When prompted with **Stay signed in?**, click **Yes**.
 
    ![](./media/gs9.png)
 
